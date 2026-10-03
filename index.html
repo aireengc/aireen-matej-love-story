@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Aireen & Matej | Our Love Story</title>
+<title>Aireen & Matej | Destination Forever</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -13,14 +13,9 @@
 
 <style>
 
-:root{
-  --black:#070606;
-  --wine:#5e0d18;
-  --red:#a4162b;
-  --gold:#d8b56a;
-  --cream:#f4e5c2;
-  --muted:#bdb19e;
-}
+/* =========================================================
+   GLOBAL
+========================================================= */
 
 *{
   box-sizing:border-box;
@@ -33,974 +28,951 @@ html{
 }
 
 body{
-  background:var(--black);
-  color:var(--cream);
-  font-family:Montserrat,sans-serif;
+  min-height:100vh;
+  background:
+    radial-gradient(circle at top, #321016 0%, #16080c 38%, #080507 100%);
+  color:#eee2cc;
+  font-family:'Cormorant Garamond',serif;
   overflow-x:hidden;
 }
 
 button{
-  font:inherit;
-  cursor:pointer;
+  font-family:inherit;
+}
+
+.hidden{
+  display:none !important;
 }
 
 
-/* =========================
-   BACKGROUND
-========================= */
+/* =========================================================
+   OPENING SCREEN
+========================================================= */
 
-.hero{
+.landing{
   min-height:100vh;
-  position:relative;
   display:flex;
-  align-items:center;
   justify-content:center;
+  align-items:center;
   padding:30px 18px;
-  overflow:hidden;
-
-  background:
-    radial-gradient(
-      circle at 50% 42%,
-      rgba(132,17,35,.42),
-      transparent 32%
-    ),
-    linear-gradient(
-      rgba(0,0,0,.15),
-      rgba(0,0,0,.88)
-    ),
-    #090707;
-}
-
-.hero:after{
-  content:"";
-  position:absolute;
-  inset:0;
-  pointer-events:none;
-
-  background:
-    radial-gradient(
-      ellipse at 50% 100%,
-      rgba(89,13,24,.35),
-      transparent 55%
-    );
-}
-
-.forest{
-  position:absolute;
-  inset:0;
-  overflow:hidden;
-  pointer-events:none;
-}
-
-.tree{
-  position:absolute;
-  bottom:-30px;
-  width:0;
-  height:0;
-
-  border-left:90px solid transparent;
-  border-right:90px solid transparent;
-  border-bottom:270px solid rgba(14,12,12,.92);
-}
-
-.tree:after{
-  content:"";
-  position:absolute;
-  left:-65px;
-  top:95px;
-
-  border-left:65px solid transparent;
-  border-right:65px solid transparent;
-  border-bottom:190px solid rgba(8,8,8,.95);
-}
-
-.tree:nth-child(1){
-  left:-30px;
-  transform:scale(1.25);
-}
-
-.tree:nth-child(2){
-  left:20%;
-  transform:scale(.72);
-}
-
-.tree:nth-child(3){
-  right:18%;
-  transform:scale(1.05);
-}
-
-.tree:nth-child(4){
-  right:-45px;
-  transform:scale(1.4);
-}
-
-.mist{
-  position:absolute;
-  left:-20%;
-  width:140%;
-  height:170px;
-  border-radius:50%;
-
-  background:rgba(235,220,190,.035);
-
-  filter:blur(25px);
-
-  animation:mist 14s ease-in-out infinite alternate;
-}
-
-.mist.one{
-  bottom:15%;
-}
-
-.mist.two{
-  bottom:35%;
-  animation-delay:-5s;
-  opacity:.55;
-}
-
-@keyframes mist{
-  from{
-    transform:translateX(-5%);
-  }
-
-  to{
-    transform:translateX(5%);
-  }
-}
-
-.particle{
-  position:absolute;
-  width:3px;
-  height:3px;
-  border-radius:50%;
-
-  background:var(--gold);
-  opacity:.45;
-
-  animation:float 7s ease-in-out infinite;
-}
-
-.p1{left:15%;top:22%}
-.p2{left:80%;top:25%;animation-delay:1s}
-.p3{left:32%;top:68%;animation-delay:2s}
-.p4{left:70%;top:72%;animation-delay:3s}
-.p5{left:54%;top:14%;animation-delay:4s}
-
-@keyframes float{
-  50%{
-    transform:translateY(-28px);
-    opacity:.95;
-  }
-}
-
-
-/* =========================
-   BOARDING PASS
-========================= */
-
-.boarding-pass{
   position:relative;
-  z-index:5;
-
-  width:min(980px,95vw);
-  min-height:500px;
-
-  display:grid;
-  grid-template-columns:1fr 190px;
-
   overflow:hidden;
+}
 
+.landing::before{
+  content:"";
+  position:absolute;
+  inset:20px;
+  border:1px solid rgba(216,181,106,.28);
+  pointer-events:none;
+}
+
+.landing::after{
+  content:"";
+  position:absolute;
+  inset:32px;
+  border:1px solid rgba(216,181,106,.10);
+  pointer-events:none;
+}
+
+.ticket{
+  width:min(1100px,94vw);
+  min-height:540px;
+  display:grid;
+  grid-template-columns:1fr 210px;
+  position:relative;
   border:1px solid rgba(216,181,106,.7);
-  border-radius:9px;
-
   background:
     linear-gradient(
       135deg,
-      rgba(20,17,17,.96),
-      rgba(48,7,15,.94)
+      rgba(57,18,25,.96),
+      rgba(10,7,9,.98)
     );
-
   box-shadow:
-    0 35px 100px rgba(0,0,0,.8),
-    0 0 60px rgba(130,15,35,.18);
-
-  animation:appear 1.2s ease;
-}
-
-@keyframes appear{
-  from{
-    opacity:0;
-    transform:translateY(30px) scale(.97);
-  }
-
-  to{
-    opacity:1;
-    transform:none;
-  }
+    0 30px 80px rgba(0,0,0,.65),
+    inset 0 0 50px rgba(216,181,106,.035);
 }
 
 .ticket-main{
-  padding:58px 65px;
+  padding:60px 70px;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  text-align:center;
   position:relative;
 }
 
-.ticket-main:after{
+.ticket-main::before{
   content:"";
   position:absolute;
-  right:0;
-  top:0;
-  height:100%;
-
-  border-right:2px dashed rgba(216,181,106,.55);
-}
-
-.small-title,
-.stub-label,
-.eyebrow{
-  font-family:Cinzel,serif;
-  letter-spacing:5px;
-  color:var(--gold);
-  font-size:11px;
-}
-
-.small-title{
-  margin-bottom:28px;
-}
-
-
-/* ELEGANT CURSIVE NAMES */
-
-.names{
-  font-family:"Pinyon Script",cursive;
-
-  font-size:clamp(58px,8vw,92px);
-
-  line-height:.9;
-
-  font-weight:400;
-
-  color:#f7e7c3;
-
-  text-shadow:
-    0 4px 25px rgba(0,0,0,.3);
-
-  white-space:nowrap;
-
-  letter-spacing:-1px;
-}
-
-.ampersand{
-  color:var(--red);
-  font-size:.65em;
-  margin:0 7px;
-}
-
-.destination{
-  margin-top:42px;
-
-  font-family:Cinzel,serif;
-  letter-spacing:4px;
-  font-size:13px;
-
-  color:var(--gold);
-}
-
-.date{
-  margin-top:14px;
-
-  font-family:Cinzel,serif;
-  font-size:24px;
-  letter-spacing:5px;
-}
-
-.tagline{
-  margin-top:27px;
-
-  color:#c9bead;
-
-  font-family:"Cormorant Garamond",serif;
-
-  font-size:20px;
-  line-height:1.35;
-
-  max-width:560px;
-}
-
-.begin-button{
-  margin-top:30px;
-
-  padding:14px 25px;
-
-  border:1px solid #b99752;
-
-  background:rgba(100,10,20,.52);
-
-  color:var(--cream);
-
-  font-family:Cinzel,serif;
-
-  font-size:10px;
-  letter-spacing:3px;
-
-  transition:.3s;
-}
-
-.begin-button:hover{
-  background:#8e1729;
-  border-color:#f0d28a;
-
-  transform:translateY(-2px);
-
-  box-shadow:
-    0 10px 30px rgba(120,10,30,.35);
-}
-
-
-/* =========================
-   BOARDING PASS STUB
-========================= */
-
-.ticket-stub{
-  padding:35px 22px;
-
-  display:flex;
-  flex-direction:column;
-  justify-content:space-between;
-  align-items:center;
-
-  text-align:center;
-
-  background:rgba(0,0,0,.18);
-}
-
-.flight{
-  font-family:Cinzel,serif;
-  font-size:30px;
-  letter-spacing:4px;
-}
-
-.route{
-  font-size:10px;
-  letter-spacing:2px;
-  color:#bdb09b;
-  margin-top:5px;
-}
-
-.gold-line{
-  width:45px;
-  height:1px;
-
-  background:var(--gold);
-
-  margin:12px auto;
-}
-
-.barcode{
-  width:88px;
-  height:82px;
-
-  background:
-    repeating-linear-gradient(
-      90deg,
-      #e5d3aa 0 2px,
-      transparent 2px 5px
-    );
-
-  opacity:.75;
-}
-
-
-/* =========================
-   PASSPORT
-========================= */
-
-.passport-overlay{
-  position:fixed;
-  inset:0;
-
-  z-index:30;
-
-  display:none;
-
-  align-items:center;
-  justify-content:center;
-
-  padding:18px;
-
-  background:rgba(0,0,0,.82);
-
-  backdrop-filter:blur(10px);
-}
-
-.passport-overlay.open{
-  display:flex;
-}
-
-.passport{
-  width:min(900px,96vw);
-
-  height:min(680px,92vh);
-
-  position:relative;
-
-  background:#17110e;
-
-  border:1px solid rgba(216,181,106,.55);
-
-  box-shadow:0 30px 100px #000;
-
-  overflow:hidden;
-}
-
-.passport-cover{
-  position:absolute;
-  inset:0;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  flex-direction:column;
-
-  background:
-    radial-gradient(
-      circle at 50% 45%,
-      #65101e,
-      #26070c 60%,
-      #100607
-    );
-
-  transition:.7s;
-
-  z-index:3;
-}
-
-.passport-cover.hidden{
-  transform:translateX(-100%);
-  opacity:0;
+  inset:18px;
+  border:1px solid rgba(216,181,106,.18);
   pointer-events:none;
 }
 
-.passport-symbol{
-  font-size:58px;
-  color:var(--gold);
-  margin-bottom:20px;
-}
-
-.passport-cover h3{
-  font-family:Cinzel,serif;
-  letter-spacing:7px;
-  font-weight:400;
-  color:var(--gold);
-}
-
-.cover-names{
-  font-family:"Pinyon Script",cursive;
-  font-size:80px;
-  color:var(--cream);
-  margin:15px 0;
-}
-
-.open-passport{
-  padding:13px 24px;
-
-  background:transparent;
-
-  border:1px solid var(--gold);
-
-  color:var(--cream);
-
-  font-family:Cinzel,serif;
-
-  letter-spacing:3px;
-
+.small-label{
+  font-family:'Cinzel',serif;
   font-size:10px;
+  letter-spacing:5px;
+  color:#d8b56a;
+  margin-bottom:22px;
 }
 
-.close-passport{
-  position:absolute;
-
-  right:14px;
-  top:12px;
-
-  z-index:10;
-
-  border:0;
-
-  background:transparent;
-
-  color:var(--gold);
-
-  font-size:25px;
-}
-
-
-/* =========================
-   PASSPORT PAGES
-========================= */
-
-.passport-page{
-  position:absolute;
-  inset:0;
-
-  padding:40px 58px 70px;
-
-  background:
-    linear-gradient(
-      135deg,
-      #211814,
-      #120e0c
-    );
-
-  overflow:hidden;
-}
-
-.page-head{
-  text-align:center;
-
-  border-bottom:1px solid rgba(216,181,106,.25);
-
-  padding-bottom:15px;
-
-  margin-bottom:12px;
-}
-
-.page-head .mini{
-  font-family:Cinzel,serif;
-
-  font-size:9px;
-
-  letter-spacing:4px;
-
-  color:var(--gold);
-}
-
-.page-head h2{
-  font-family:"Pinyon Script",cursive;
-
-  font-size:62px;
-
+.names{
+  font-family:'Pinyon Script',cursive;
+  font-size:clamp(70px,9vw,120px);
   font-weight:400;
-
-  color:var(--cream);
-
-  margin:2px 0 0;
+  line-height:.9;
+  color:#f0d99a;
+  text-shadow:0 3px 20px rgba(0,0,0,.5);
+  white-space:nowrap;
 }
 
-.page-content{
-  text-align:center;
-
-  max-width:680px;
-
-  margin:auto;
+.destination{
+  margin-top:28px;
+  font-family:'Cinzel',serif;
+  font-size:13px;
+  letter-spacing:5px;
+  color:#d8b56a;
 }
 
-.page-content p{
-  font-family:"Cormorant Garamond",serif;
-
-  font-size:19px;
-
-  line-height:1.3;
-
-  color:#d1c5b1;
-}
-
-.stamp{
-  display:inline-flex;
-
-  width:105px;
-  height:105px;
-
-  border:2px solid rgba(216,181,106,.65);
-
-  border-radius:50%;
-
-  align-items:center;
-  justify-content:center;
-
-  flex-direction:column;
-
-  margin:4px 18px 10px;
-
-  color:var(--gold);
-
-  transform:rotate(-7deg);
-
-  font-family:Cinzel,serif;
-
-  letter-spacing:2px;
-}
-
-.stamp strong{
-  font-size:17px;
-  margin:4px 0;
-}
-
-.stamp small{
-  font-size:6px;
-}
-
-
-/* =========================
-   JOURNEY PHOTO
-========================= */
-
-.journey-photo{
-  width:min(235px,58vw);
-
-  margin:9px auto 5px;
-
-  padding:4px;
-
-  border:1px solid rgba(216,181,106,.45);
-
-  background:rgba(255,255,255,.025);
-
-  box-shadow:
-    0 8px 20px rgba(0,0,0,.25);
-}
-
-.journey-photo img{
-  display:block;
-
-  width:100%;
-
-  height:118px;
-
-  object-fit:cover;
-
-  object-position:center 35%;
-}
-
-.journey-caption{
-  text-align:center;
-
-  margin:5px 0 0 !important;
-
-  font-family:Cinzel,serif !important;
-
-  font-size:7px !important;
-
-  letter-spacing:2px !important;
-
-  color:#d8b56a !important;
-
-  text-transform:uppercase;
-}
-
-
-/* =========================
-   PASSPORT BUTTONS
-========================= */
-
-.page-buttons{
-  position:absolute;
-
-  left:0;
-  right:0;
-
-  bottom:12px;
-
-  display:flex;
-
-  justify-content:center;
-
-  gap:10px;
-}
-
-.page-btn{
-  padding:9px 16px;
-
-  background:rgba(95,13,25,.55);
-
-  border:1px solid rgba(216,181,106,.45);
-
-  color:var(--cream);
-
-  font-family:Cinzel,serif;
-
-  font-size:9px;
-
-  letter-spacing:2px;
-}
-
-
-/* =========================
-   COUNTDOWN
-========================= */
-
-.countdown{
-  display:flex;
-
-  justify-content:center;
-
-  gap:12px;
-
-  flex-wrap:wrap;
-
-  margin-top:20px;
-}
-
-.timebox{
-  min-width:85px;
-
-  padding:12px;
-
-  border:1px solid rgba(216,181,106,.28);
-
-  background:rgba(255,255,255,.025);
-}
-
-.timebox strong{
-  display:block;
-
-  font-family:Cinzel,serif;
-
+.wedding-date{
+  margin-top:12px;
+  font-family:'Cinzel',serif;
   font-size:22px;
-
-  color:var(--gold);
+  letter-spacing:5px;
+  color:#f0dfb5;
 }
 
-.timebox span{
-  font-size:7px;
+.invitation-text{
+  max-width:570px;
+  margin:25px auto 0;
+  font-size:19px;
+  line-height:1.45;
+  color:#d7c7ae;
+}
 
+.begin-btn{
+  align-self:center;
+  margin-top:32px;
+  padding:14px 34px;
+  border:1px solid #d8b56a;
+  background:transparent;
+  color:#ead39a;
+  font-family:'Cinzel',serif;
+  font-size:10px;
   letter-spacing:3px;
+  cursor:pointer;
+  transition:.3s ease;
+}
 
-  color:#a99d8b;
+.begin-btn:hover{
+  background:#d8b56a;
+  color:#16080c;
 }
 
 
-/* =========================
-   OTHER SECTIONS
-========================= */
+/* =========================================================
+   BOARDING PASS SIDE
+========================================================= */
 
-.section{
-  min-height:100vh;
-
-  padding:110px 24px;
-
+.ticket-side{
+  border-left:1px dashed rgba(216,181,106,.6);
   display:flex;
-
-  align-items:center;
+  flex-direction:column;
   justify-content:center;
-
-  background:
-    radial-gradient(
-      circle at 50% 20%,
-      rgba(116,15,28,.18),
-      transparent 40%
-    ),
-    #090707;
+  align-items:center;
+  padding:25px 15px;
+  position:relative;
 }
 
-.content{
-  max-width:850px;
+.ticket-side::before,
+.ticket-side::after{
+  content:"";
+  position:absolute;
+  left:-8px;
+  width:15px;
+  height:15px;
+  background:#16080c;
+  border:1px solid rgba(216,181,106,.55);
+  border-radius:50%;
+}
 
+.ticket-side::before{
+  top:-8px;
+}
+
+.ticket-side::after{
+  bottom:-8px;
+}
+
+.side-title{
+  font-family:'Cinzel',serif;
+  font-size:9px;
+  letter-spacing:3px;
+  color:#d8b56a;
   text-align:center;
-}
-
-.eyebrow{
-  margin-bottom:18px;
-}
-
-h2{
-  font-family:"Pinyon Script",cursive;
-
-  font-size:clamp(65px,9vw,100px);
-
-  font-weight:400;
-
-  color:var(--cream);
-
+  writing-mode:vertical-rl;
+  transform:rotate(180deg);
   margin-bottom:25px;
 }
 
-.story-text{
-  font-family:"Cormorant Garamond",serif;
-
-  color:#c7bba5;
-
-  line-height:1.8;
-
-  font-size:21px;
-
-  max-width:650px;
-
-  margin:auto;
-}
-
-.ornament{
-  color:var(--red);
-
-  font-size:32px;
-
-  margin:20px 0;
-}
-
-.details{
-  display:grid;
-
-  grid-template-columns:
-    repeat(3,1fr);
-
-  gap:18px;
-
-  margin-top:40px;
-}
-
-.detail-card{
-  padding:32px 18px;
-
-  border:1px solid rgba(216,181,106,.25);
-
-  background:rgba(255,255,255,.025);
-}
-
-.detail-icon{
-  font-size:27px;
-  margin-bottom:13px;
-}
-
-.detail-card h3{
-  font-family:Cinzel,serif;
-
+.side-route{
+  font-family:'Cinzel',serif;
   font-size:12px;
-
   letter-spacing:2px;
-
-  color:var(--gold);
-
-  margin-bottom:10px;
-}
-
-.detail-card p{
-  font-family:"Cormorant Garamond",serif;
-
-  font-size:19px;
-
-  color:#c7bba5;
-}
-
-
-/* =========================
-   FOOTER
-========================= */
-
-footer{
+  color:#eee2cc;
   text-align:center;
-
-  padding:55px 20px;
-
-  background:#050505;
-
-  border-top:1px solid rgba(216,181,106,.15);
+  line-height:1.8;
 }
 
-.names-small{
-  font-family:"Pinyon Script",cursive;
-
-  font-size:55px;
-
-  color:#e7d4aa;
+.side-route span{
+  display:block;
+  color:#d8b56a;
+  font-size:20px;
 }
 
-footer p{
-  margin-top:8px;
+.side-seat{
+  margin-top:25px;
+  font-family:'Cinzel',serif;
+  font-size:10px;
+  letter-spacing:3px;
+  color:#d8b56a;
+}
 
-  font-family:Cinzel,serif;
 
-  font-size:9px;
+/* =========================================================
+   PASSPORT
+========================================================= */
 
+.passport{
+  display:none;
+  min-height:100vh;
+  padding:25px 15px 70px;
+  background:
+    radial-gradient(
+      circle at 50% 0%,
+      #321016 0%,
+      #12090d 48%,
+      #080507 100%
+    );
+}
+
+.passport-inner{
+  width:min(1100px,100%);
+  margin:auto;
+  border:1px solid rgba(216,181,106,.65);
+  background:
+    linear-gradient(
+      135deg,
+      rgba(28,12,17,.98),
+      rgba(8,6,8,.98)
+    );
+  box-shadow:0 25px 70px rgba(0,0,0,.6);
+  position:relative;
+}
+
+.passport-inner::before{
+  content:"";
+  position:absolute;
+  inset:12px;
+  border:1px solid rgba(216,181,106,.12);
+  pointer-events:none;
+}
+
+.passport-page{
+  display:none;
+  min-height:760px;
+  padding:55px 60px 45px;
+  position:relative;
+}
+
+.passport-page.active{
+  display:block;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.page-head{
+  text-align:center;
+  margin-bottom:35px;
+}
+
+.page-number{
+  font-family:'Cinzel',serif;
+  font-size:8px;
   letter-spacing:4px;
+  color:#d8b56a;
+  margin-bottom:8px;
+}
 
-  color:#8f8370;
+.page-head h2{
+  font-family:'Pinyon Script',cursive;
+  font-size:58px;
+  font-weight:400;
+  color:#f0d99a;
+  line-height:1;
+}
+
+.page-head p{
+  margin-top:8px;
+  font-family:'Cinzel',serif;
+  font-size:9px;
+  letter-spacing:3px;
+  color:#bba88a;
 }
 
 
-/* =========================
+/* =========================================================
+   PAGE 1 — WELCOME
+========================================================= */
+
+.welcome-page{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+}
+
+.passport-stamp{
+  width:130px;
+  height:130px;
+  border:2px solid rgba(216,181,106,.65);
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  transform:rotate(-8deg);
+  margin-bottom:35px;
+}
+
+.passport-stamp strong{
+  font-family:'Cinzel',serif;
+  font-size:24px;
+  color:#d8b56a;
+}
+
+.passport-stamp span{
+  font-family:'Cinzel',serif;
+  font-size:7px;
+  letter-spacing:3px;
+  color:#bca98a;
+}
+
+.welcome-title{
+  font-family:'Pinyon Script',cursive;
+  font-size:85px;
+  color:#f0d99a;
+  line-height:.9;
+  white-space:nowrap;
+}
+
+.welcome-subtitle{
+  margin-top:20px;
+  font-family:'Cinzel',serif;
+  font-size:12px;
+  letter-spacing:5px;
+  color:#d8b56a;
+}
+
+.welcome-copy{
+  max-width:570px;
+  margin:25px auto;
+  font-size:20px;
+  line-height:1.5;
+  color:#d8c9b1;
+}
+
+
+/* =========================================================
+   PAGE 2 — OUR JOURNEY
+========================================================= */
+
+.journey-page{
+  text-align:center;
+}
+
+.route{
+  max-width:850px;
+  margin:0 auto 40px;
+  position:relative;
+  padding:35px 0;
+}
+
+.route-line{
+  position:absolute;
+  top:50%;
+  left:10%;
+  right:10%;
+  height:1px;
+  background:rgba(216,181,106,.5);
+}
+
+.route-points{
+  position:relative;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.route-point{
+  width:145px;
+}
+
+.route-circle{
+  width:50px;
+  height:50px;
+  margin:0 auto 12px;
+  border:1px solid #d8b56a;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:#12090d;
+  color:#d8b56a;
+  font-family:'Cinzel',serif;
+  font-size:10px;
+}
+
+.route-point h3{
+  font-family:'Cinzel',serif;
+  font-size:11px;
+  letter-spacing:2px;
+  color:#e4c57e;
+}
+
+.route-point p{
+  margin-top:5px;
+  font-size:14px;
+  color:#c7b89f;
+}
+
+.journey-message{
+  max-width:700px;
+  margin:auto;
+  padding:35px;
+  border-top:1px solid rgba(216,181,106,.35);
+  border-bottom:1px solid rgba(216,181,106,.35);
+}
+
+.journey-message p{
+  font-size:24px;
+  line-height:1.4;
+  color:#e1d2b8;
+}
+
+
+/* =========================================================
+   PAGE 3 — WEDDING DETAILS
+========================================================= */
+
+.details-page{
+  padding-bottom:55px;
+}
+
+.details-top{
+  display:grid;
+  grid-template-columns:130px 1fr 150px;
+  align-items:center;
+  gap:25px;
+  margin-bottom:30px;
+  text-align:center;
+}
+
+.destination-stamp{
+  width:105px;
+  height:105px;
+  border:2px solid rgba(216,181,106,.65);
+  border-radius:50%;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  margin:auto;
+  transform:rotate(-6deg);
+}
+
+.destination-stamp span,
+.destination-stamp small{
+  font-family:'Cinzel',serif;
+  font-size:7px;
+  letter-spacing:3px;
+  color:#d8b56a;
+}
+
+.destination-stamp strong{
+  font-family:'Cinzel',serif;
+  font-size:20px;
+  margin:5px 0;
+  color:#f1d68c;
+}
+
+.date-info h3{
+  font-family:'Cinzel',serif;
+  color:#d8b56a;
+  font-size:23px;
+  margin-bottom:6px;
+  letter-spacing:2px;
+}
+
+.date-info p{
+  font-family:'Cinzel',serif;
+  font-size:20px;
+  letter-spacing:3px;
+}
+
+.date-info span{
+  display:block;
+  margin-top:5px;
+  font-family:'Cinzel',serif;
+  font-size:8px;
+  letter-spacing:3px;
+  color:#bca98a;
+}
+
+.destination-icon{
+  font-size:30px;
+  color:#d8b56a;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+}
+
+.destination-icon span{
+  font-family:'Cinzel',serif;
+  font-size:9px;
+  letter-spacing:2px;
+  line-height:1.5;
+  margin-top:7px;
+}
+
+.destination-icon small{
+  margin-top:4px;
+  font-family:'Cinzel',serif;
+  font-size:7px;
+  letter-spacing:2px;
+  color:#bca98a;
+}
+
+
+/* VENUES */
+
+.venue-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+  margin-bottom:30px;
+}
+
+.venue-card{
+  text-align:center;
+}
+
+.venue-heading{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  font-family:'Cinzel',serif;
+  letter-spacing:3px;
+  font-size:10px;
+  color:#d8b56a;
+  margin-bottom:9px;
+}
+
+.venue-heading span{
+  width:45px;
+  height:1px;
+  background:rgba(216,181,106,.5);
+}
+
+.venue-photo{
+  width:100%;
+  height:190px;
+  object-fit:cover;
+  display:block;
+  border:1px solid rgba(216,181,106,.6);
+}
+
+.venue-card h3{
+  margin:9px 0 3px;
+  font-family:'Cinzel',serif;
+  font-size:13px;
+  letter-spacing:2px;
+  color:#e3bd68;
+}
+
+.venue-card p{
+  font-size:15px;
+  line-height:1.25;
+  color:#d3c2a7;
+}
+
+
+/* DRESS CODE */
+
+.dress-code{
+  border:1px solid rgba(216,181,106,.45);
+  padding:18px 20px 20px;
+  background:rgba(255,255,255,.012);
+}
+
+.dress-heading{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:15px;
+  text-align:center;
+  margin-bottom:15px;
+}
+
+.dress-heading > span{
+  flex:1;
+  height:1px;
+  background:rgba(216,181,106,.4);
+}
+
+.dress-heading small{
+  display:block;
+  font-family:'Cinzel',serif;
+  font-size:7px;
+  letter-spacing:4px;
+  color:#d8b56a;
+}
+
+.dress-heading h2{
+  font-family:'Pinyon Script',cursive;
+  font-size:34px;
+  font-weight:400;
+  color:#f5dfaa;
+  line-height:1;
+}
+
+.dress-heading p{
+  margin-top:3px;
+  font-size:12px;
+  color:#cbbca4;
+}
+
+.dress-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.dress-group{
+  text-align:center;
+}
+
+.dress-group h3{
+  font-family:'Cinzel',serif;
+  font-size:9px;
+  letter-spacing:3px;
+  color:#d8b56a;
+  margin-bottom:6px;
+}
+
+.dress-photo{
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  display:block;
+  border:1px solid rgba(216,181,106,.3);
+}
+
+.color-label{
+  margin-top:7px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:6px;
+}
+
+.color-label strong{
+  margin-left:5px;
+  font-family:'Cinzel',serif;
+  font-size:8px;
+  letter-spacing:2px;
+  color:#d8b56a;
+}
+
+.color-dot{
+  width:13px;
+  height:13px;
+  border-radius:50%;
+  border:1px solid rgba(255,255,255,.3);
+}
+
+.color-dot.red{
+  background:#9b1025;
+}
+
+.color-dot.gold{
+  background:#d7ae55;
+}
+
+.color-dot.black{
+  background:#050505;
+}
+
+
+/* =========================================================
+   PAGE 4 — COUNTDOWN
+========================================================= */
+
+.countdown-page{
+  text-align:center;
+}
+
+.countdown-intro{
+  max-width:600px;
+  margin:0 auto 35px;
+  font-size:20px;
+  color:#d5c5aa;
+}
+
+.countdown{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:18px;
+  max-width:750px;
+  margin:0 auto 45px;
+}
+
+.time-box{
+  padding:25px 10px;
+  border:1px solid rgba(216,181,106,.45);
+  background:rgba(255,255,255,.015);
+}
+
+.time-box strong{
+  display:block;
+  font-family:'Cinzel',serif;
+  font-size:42px;
+  font-weight:400;
+  color:#f0d99a;
+}
+
+.time-box span{
+  display:block;
+  margin-top:7px;
+  font-family:'Cinzel',serif;
+  font-size:8px;
+  letter-spacing:3px;
+  color:#bca98a;
+}
+
+.final-message{
+  font-family:'Pinyon Script',cursive;
+  font-size:65px;
+  color:#e7c978;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.page-buttons{
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  margin-top:35px;
+}
+
+.page-btn{
+  min-width:150px;
+  padding:12px 18px;
+  border:1px solid rgba(216,181,106,.65);
+  background:transparent;
+  color:#d8b56a;
+  font-family:'Cinzel',serif;
+  font-size:9px;
+  letter-spacing:2px;
+  cursor:pointer;
+  transition:.3s ease;
+}
+
+.page-btn:hover{
+  background:#d8b56a;
+  color:#16080c;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+.passport-footer{
+  padding:18px;
+  border-top:1px solid rgba(216,181,106,.2);
+  text-align:center;
+  font-family:'Cinzel',serif;
+  font-size:7px;
+  letter-spacing:3px;
+  color:#806f59;
+}
+
+
+/* =========================================================
    MOBILE
-========================= */
+========================================================= */
 
-@media(max-width:700px){
+@media(max-width:750px){
 
-  .boarding-pass{
+  .landing{
+    padding:20px 12px;
+  }
+
+  .landing::before{
+    inset:10px;
+  }
+
+  .landing::after{
+    inset:20px;
+  }
+
+  .ticket{
     grid-template-columns:1fr;
+    min-height:auto;
   }
 
   .ticket-main{
-    padding:43px 28px;
+    padding:55px 25px 45px;
   }
 
-  .ticket-main:after{
-    display:none;
+  .ticket-side{
+    min-height:120px;
+    border-left:0;
+    border-top:1px dashed rgba(216,181,106,.6);
+    flex-direction:row;
+    gap:30px;
   }
 
-  .ticket-stub{
-    border-top:2px dashed rgba(216,181,106,.5);
-
-    min-height:150px;
-
-    padding:22px;
+  .side-title{
+    writing-mode:initial;
+    transform:none;
+    margin:0;
   }
 
-  .barcode{
-    display:none;
+  .side-route{
+    font-size:10px;
+  }
+
+  .side-seat{
+    margin:0;
   }
 
   .names{
-    font-size:70px;
+    font-size:64px;
   }
 
-  .tagline{
-    font-size:18px;
+  .destination{
+    font-size:10px;
+    letter-spacing:3px;
   }
 
-  .date{
-    font-size:18px;
+  .wedding-date{
+    font-size:16px;
+    letter-spacing:3px;
   }
 
-  .details{
-    grid-template-columns:1fr;
-  }
-
-  .passport{
-    height:92vh;
-  }
-
-  .passport-page{
-    padding:38px 20px 65px;
-  }
-
-  .cover-names{
-    font-size:62px;
-  }
-
-  .page-head h2{
-    font-size:52px;
-  }
-
-  .page-content p{
+  .invitation-text{
     font-size:17px;
   }
 
-  .journey-photo{
-    width:205px;
+  .passport{
+    padding:10px 8px 40px;
   }
 
-  .journey-photo img{
-    height:105px;
+  .passport-page{
+    padding:45px 20px 35px;
+    min-height:auto;
   }
 
-  .stamp{
-    width:90px;
-    height:90px;
+  .page-head h2{
+    font-size:48px;
   }
 
-  .stamp strong{
-    font-size:15px;
+  .welcome-title{
+    font-size:60px;
   }
 
-  .timebox{
-    min-width:70px;
+  .route-points{
+    gap:5px;
+  }
+
+  .route-point{
+    width:30%;
+  }
+
+  .route-circle{
+    width:42px;
+    height:42px;
+  }
+
+  .route-line{
+    left:12%;
+    right:12%;
+  }
+
+  .journey-message p{
+    font-size:20px;
+  }
+
+  .details-top{
+    grid-template-columns:1fr;
+    gap:15px;
+  }
+
+  .destination-stamp{
+    width:85px;
+    height:85px;
+  }
+
+  .venue-grid{
+    grid-template-columns:1fr;
+    gap:25px;
+  }
+
+  .venue-photo{
+    height:190px;
+  }
+
+  .dress-grid{
+    grid-template-columns:1fr;
+    gap:20px;
+  }
+
+  .dress-photo{
+    height:180px;
+  }
+
+  .countdown{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+  .time-box strong{
+    font-size:32px;
+  }
+
+  .final-message{
+    font-size:50px;
+  }
+
+  .page-buttons{
+    flex-direction:column;
+    align-items:center;
+  }
+
+  .page-btn{
+    width:100%;
+    max-width:300px;
   }
 }
 
@@ -1011,97 +983,60 @@ footer p{
 <body>
 
 
-<!-- =========================
-     BACKGROUND
-========================= -->
+<!-- ======================================================
+     LANDING PAGE
+====================================================== -->
 
-<div class="forest">
+<section class="landing" id="landing">
 
-  <div class="tree"></div>
-  <div class="tree"></div>
-  <div class="tree"></div>
-  <div class="tree"></div>
-
-  <div class="mist one"></div>
-  <div class="mist two"></div>
-
-  <div class="particle p1"></div>
-  <div class="particle p2"></div>
-  <div class="particle p3"></div>
-  <div class="particle p4"></div>
-  <div class="particle p5"></div>
-
-</div>
-
-
-<!-- =========================
-     MAIN INVITATION
-========================= -->
-
-<section class="hero">
-
-  <div class="boarding-pass">
+  <div class="ticket">
 
     <div class="ticket-main">
 
-      <div class="small-title">
-        ✦ YOUR INVITATION ✦
+      <div class="small-label">
+        YOUR INVITATION
       </div>
 
       <div class="names">
-        Aireen
-        <span class="ampersand">&</span>
-        Matej
+        Aireen &amp; Matej
       </div>
 
       <div class="destination">
         DESTINATION: FOREVER
       </div>
 
-      <div class="date">
+      <div class="wedding-date">
         20 · MAY · 2027
       </div>
 
-      <div class="tagline">
-        Two hearts. One journey. One beautiful destination.<br>
+      <p class="invitation-text">
+        Two hearts. One journey. One beautiful destination.
+        <br>
         We invite you to celebrate the beginning of our forever.
-      </div>
+      </p>
 
-      <button
-        class="begin-button"
-        onclick="openPassport()">
-
-        BEGIN OUR JOURNEY ✦
-
+      <button class="begin-btn" onclick="openPassport()">
+        BEGIN OUR JOURNEY
       </button>
 
     </div>
 
 
-    <div class="ticket-stub">
+    <div class="ticket-side">
 
-      <div>
-
-        <div class="stub-label">
-          BOARDING PASS
-        </div>
-
-        <div class="gold-line"></div>
-
-        <div class="flight">
-          AM 2027
-        </div>
-
-        <div class="route">
-          LOVE → FOREVER
-        </div>
-
+      <div class="side-title">
+        BOARDING PASS
       </div>
 
-      <div class="barcode"></div>
+      <div class="side-route">
+        AM 2027
+        <span>♥</span>
+        LOVE → FOREVER
+      </div>
 
-      <div class="stub-label">
-        SEAT: 01 ♥ 02
+      <div class="side-seat">
+        SEAT<br>
+        01 ♥ 02
       </div>
 
     </div>
@@ -1112,113 +1047,306 @@ footer p{
 
 
 
-<!-- =========================
-     LOVE PASSPORT
-========================= -->
+<!-- ======================================================
+     PASSPORT
+====================================================== -->
 
-<div
-  class="passport-overlay"
-  id="passportOverlay">
+<section class="passport" id="passport">
 
-  <div class="passport">
-
-    <button
-      class="close-passport"
-      onclick="closePassport()">
-
-      ×
-
-    </button>
+  <div class="passport-inner">
 
 
-    <!-- PASSPORT COVER -->
+    <!-- ==================================================
+         PAGE 1
+    ================================================== -->
 
-    <div
-      class="passport-cover"
-      id="passportCover">
+    <div class="passport-page welcome-page active" id="page1">
 
-      <div class="passport-symbol">
-        ✦
+      <div class="passport-stamp">
+        <strong>PH</strong>
+        <span>DESTINATION</span>
+        <span>2027</span>
       </div>
 
-      <h3>
-        THE LOVE PASSPORT
-      </h3>
-
-      <div class="cover-names">
-        Aireen & Matej
+      <div class="page-number">
+        PASSPORT PAGE 01
       </div>
 
-      <button
-        class="open-passport"
-        onclick="showPage(1)">
+      <div class="welcome-title">
+        Our Forever
+      </div>
 
-        OPEN PASSPORT
+      <div class="welcome-subtitle">
+        AIREEN &amp; MATEJ
+      </div>
 
-      </button>
+      <p class="welcome-copy">
+        Our journey has brought us across borders,
+        through beautiful moments and unforgettable memories.
+        Now we invite you to join us for the most beautiful
+        destination of all.
+      </p>
+
+      <div class="page-buttons">
+        <button class="page-btn" onclick="closePassport()">
+          ← EXIT
+        </button>
+
+        <button class="page-btn" onclick="showPage(2)">
+          CONTINUE →
+        </button>
+      </div>
 
     </div>
 
 
 
-    <!-- =========================
-         PAGE 1 — OUR JOURNEY
-    ========================= -->
+    <!-- ==================================================
+         PAGE 2
+    ================================================== -->
 
-    <div
-      class="passport-page"
-      id="page1">
+    <div class="passport-page journey-page" id="page2">
 
       <div class="page-head">
 
-        <div class="mini">
-          PASSPORT PAGE 01
+        <div class="page-number">
+          PASSPORT PAGE 02
         </div>
 
         <h2>
           Our Journey
         </h2>
 
+        <p>
+          TWO HEARTS · ONE DESTINATION
+        </p>
+
       </div>
 
 
-      <div class="page-content">
+      <div class="route">
 
-        <div class="stamp">
+        <div class="route-line"></div>
+
+        <div class="route-points">
+
+          <div class="route-point">
+
+            <div class="route-circle">
+              ♡
+            </div>
+
+            <h3>
+              FIRST CHAPTER
+            </h3>
+
+            <p>
+              Where our story began
+            </p>
+
+          </div>
+
+
+          <div class="route-point">
+
+            <div class="route-circle">
+              ✈
+            </div>
+
+            <h3>
+              THE JOURNEY
+            </h3>
+
+            <p>
+              Miles, memories &amp; love
+            </p>
+
+          </div>
+
+
+          <div class="route-point">
+
+            <div class="route-circle">
+              ∞
+            </div>
+
+            <h3>
+              FOREVER
+            </h3>
+
+            <p>
+              Our next destination
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="journey-message">
+
+        <p>
+          “Wherever life takes us,
+          home will always be wherever
+          we are together.”
+        </p>
+
+      </div>
+
+
+      <div class="page-buttons">
+
+        <button class="page-btn" onclick="showPage(1)">
+          ← BACK
+        </button>
+
+        <button class="page-btn" onclick="showPage(3)">
+          NEXT PAGE →
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- ==================================================
+         PAGE 3 — WEDDING DETAILS
+    ================================================== -->
+
+    <div class="passport-page details-page" id="page3">
+
+      <div class="page-head">
+
+        <div class="page-number">
+          PASSPORT PAGE 03
+        </div>
+
+        <h2>
+          Wedding Details
+        </h2>
+
+        <p>
+          YOUR DESTINATION AWAITS
+        </p>
+
+      </div>
+
+
+      <!-- DATE -->
+
+      <div class="details-top">
+
+        <div class="destination-stamp">
+
+          <span>
+            COUNTRY
+          </span>
+
+          <strong>
+            PH
+          </strong>
 
           <small>
             DESTINATION
           </small>
 
-          <strong>
-            FOREVER
-          </strong>
+        </div>
 
-          <small>
-            LOVE • 2027
-          </small>
+
+        <div class="date-info">
+
+          <h3>
+            MAY 20, 2027
+          </h3>
+
+          <p>
+            3:30 PM
+          </p>
+
+          <span>
+            PHILIPPINE TIME
+          </span>
 
         </div>
 
 
-        <p>
-          Every love story has a beginning.
-          Ours became a journey filled with memories,
-          adventures, laughter and little moments
-          that brought us closer.
-        </p>
+        <div class="destination-icon">
+
+          ♡
+
+          <span>
+            CEREMONY<br>
+            &amp; RECEPTION
+          </span>
+
+          <small>
+            CEBU, PHILIPPINES
+          </small>
+
+        </div>
+
+      </div>
 
 
-        <!-- YOUR PHOTO -->
 
-        <div class="journey-photo">
+      <!-- VENUES -->
+
+      <div class="venue-grid">
+
+
+        <div class="venue-card">
+
+          <div class="venue-heading">
+            <span></span>
+            CEREMONY
+            <span></span>
+          </div>
 
           <img
-            src="aireen-matej.jpg"
-            alt="Aireen and Matej together">
+            src="ceremony.jpg"
+            alt="Turtle Garden at JPark Island Resort"
+            class="venue-photo"
+          >
 
-          <p class="journey-caption">
-            Two hearts • One journey • Forever
+          <h3>
+            TURTLE GARDEN
+          </h3>
+
+          <p>
+            JPark Island Resort and Waterpark
+            <br>
+            Cebu, Philippines
+          </p>
+
+        </div>
+
+
+
+        <div class="venue-card">
+
+          <div class="venue-heading">
+            <span></span>
+            RECEPTION
+            <span></span>
+          </div>
+
+          <img
+            src="reception.jpg"
+            alt="Marcela Pavilion at JPark Island Resort"
+            class="venue-photo"
+          >
+
+          <h3>
+            MARCELA PAVILION
+          </h3>
+
+          <p>
+            JPark Island Resort and Waterpark
+            <br>
+            Cebu, Philippines
           </p>
 
         </div>
@@ -1226,113 +1354,109 @@ footer p{
       </div>
 
 
+
+      <!-- DRESS CODE -->
+
+      <div class="dress-code">
+
+        <div class="dress-heading">
+
+          <span></span>
+
+          <div>
+
+            <small>
+              DRESS CODE
+            </small>
+
+            <h2>
+              Formal Beach Attire
+            </h2>
+
+            <p>
+              Elegant · Tropical · Beach-Ready
+            </p>
+
+          </div>
+
+          <span></span>
+
+        </div>
+
+
+        <div class="dress-grid">
+
+
+          <div class="dress-group">
+
+            <h3>
+              FOR WOMEN
+            </h3>
+
+            <img
+              src="women-dress-code.jpg"
+              alt="Women's red and gold formal beach attire"
+              class="dress-photo"
+            >
+
+            <div class="color-label">
+
+              <span class="color-dot red"></span>
+
+              <span class="color-dot gold"></span>
+
+              <strong>
+                RED &amp; GOLD
+              </strong>
+
+            </div>
+
+          </div>
+
+
+
+          <div class="dress-group">
+
+            <h3>
+              FOR MEN
+            </h3>
+
+            <img
+              src="men-dress-code.jpg"
+              alt="Men's black red and gold formal beach attire"
+              class="dress-photo"
+            >
+
+            <div class="color-label">
+
+              <span class="color-dot black"></span>
+
+              <span class="color-dot red"></span>
+
+              <span class="color-dot gold"></span>
+
+              <strong>
+                BLACK, RED &amp; GOLD
+              </strong>
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
       <div class="page-buttons">
 
-        <button
-          class="page-btn"
-          onclick="showPage(2)">
-
-          NEXT PAGE →
-
-        </button>
-
-      </div>
-
-    </div>
-
-
-
-    <!-- =========================
-         PAGE 2 — DESTINATION
-    ========================= -->
-
-    <div
-      class="passport-page"
-      id="page2"
-      style="display:none">
-
-      <div class="page-head">
-
-        <div class="mini">
-          PASSPORT PAGE 02
-        </div>
-
-        <h2>
-          The Destination
-        </h2>
-
-      </div>
-
-
-      <div class="page-content">
-
-        <div class="stamp">
-
-          <small>
-            DATE
-          </small>
-
-          <strong>
-            20 MAY
-          </strong>
-
-          <small>
-            2027
-          </small>
-
-        </div>
-
-
-        <p>
-          Our next destination is a lifetime together.
-          We cannot wait to celebrate this beautiful
-          chapter with the people we love.
-        </p>
-
-
-        <div class="countdown">
-
-          <div class="timebox">
-            <strong id="days">--</strong>
-            <span>DAYS</span>
-          </div>
-
-          <div class="timebox">
-            <strong id="hours">--</strong>
-            <span>HOURS</span>
-          </div>
-
-          <div class="timebox">
-            <strong id="minutes">--</strong>
-            <span>MINUTES</span>
-          </div>
-
-          <div class="timebox">
-            <strong id="seconds">--</strong>
-            <span>SECONDS</span>
-          </div>
-
-        </div>
-
-      </div>
-
-
-      <div class="page-buttons">
-
-        <button
-          class="page-btn"
-          onclick="showPage(1)">
-
+        <button class="page-btn" onclick="showPage(2)">
           ← BACK
-
         </button>
 
-        <button
-          class="page-btn"
-          onclick="showPage(3)">
-
+        <button class="page-btn" onclick="showPage(4)">
           NEXT PAGE →
-
         </button>
 
       </div>
@@ -1341,1156 +1465,271 @@ footer p{
 
 
 
-    <!-- =========================
-     PAGE 3 — WEDDING DETAILS
-========================= -->
+    <!-- ==================================================
+         PAGE 4 — COUNTDOWN
+    ================================================== -->
 
-<div
-  class="passport-page details-page"
-  id="page3"
-  style="display:none"
->
-
-  <div class="page-head">
-    <div class="mini">PASSPORT PAGE 03</div>
-    <h2>Wedding Details</h2>
-  </div>
-
-  <div class="details-top">
-
-    <div class="destination-stamp">
-      <span>COUNTRY</span>
-      <strong>PH</strong>
-      <small>DESTINATION</small>
-    </div>
-
-    <div class="date-info">
-      <h3>MAY 20, 2027</h3>
-      <p>3:30 PM</p>
-      <span>PHILIPPINE TIME</span>
-    </div>
-
-    <div class="destination-icon">
-      ♡
-      <span>
-        CEREMONY<br>
-        &amp; RECEPTION
-      </span>
-      <small>CEBU, PHILIPPINES</small>
-    </div>
-
-  </div>
-
-
-  <!-- VENUES -->
-
-  <div class="venue-grid">
-
-    <div class="venue-card">
-
-      <div class="venue-heading">
-        <span></span>
-        CEREMONY
-        <span></span>
-      </div>
-
-      <img
-        src="ceremony.jpg"
-        alt="Turtle Garden at JPark Island Resort"
-        class="venue-photo"
-      >
-
-      <h3>TURTLE GARDEN</h3>
-
-      <p>
-        JPark Island Resort and Waterpark<br>
-        Cebu, Philippines
-      </p>
-
-    </div>
-
-
-    <div class="venue-card">
-
-      <div class="venue-heading">
-        <span></span>
-        RECEPTION
-        <span></span>
-      </div>
-
-      <img
-        src="reception.jpg"
-        alt="Marcela Pavilion at JPark Island Resort"
-        class="venue-photo"
-      >
-
-      <h3>MARCELA PAVILION</h3>
-
-      <p>
-        JPark Island Resort and Waterpark<br>
-        Cebu, Philippines
-      </p>
-
-    </div>
-
-  </div>
-
-
-  <!-- DRESS CODE -->
-
-  <div class="dress-code">
-
-    <div class="dress-heading">
-
-      <span></span>
-
-      <div>
-        <small>DRESS CODE</small>
-        <h2>Formal Beach Attire</h2>
-        <p>Elegant · Tropical · Beach-Ready</p>
-      </div>
-
-      <span></span>
-
-    </div>
-
-
-    <div class="dress-grid">
-
-      <div class="dress-group">
-
-        <h3>FOR WOMEN</h3>
-
-        <img
-          src="women-dress-code.jpg"
-          alt="Women's red and gold formal beach attire"
-          class="dress-photo"
-        >
-
-        <div class="color-label">
-          <span class="color-dot red"></span>
-          <span class="color-dot gold"></span>
-          <strong>RED &amp; GOLD</strong>
-        </div>
-
-      </div>
-
-
-      <div class="dress-group">
-
-        <h3>FOR MEN</h3>
-
-        <img
-          src="men-dress-code.jpg"
-          alt="Men's black, red and gold formal beach attire"
-          class="dress-photo"
-        >
-
-        <div class="color-label">
-          <span class="color-dot black"></span>
-          <span class="color-dot red"></span>
-          <span class="color-dot gold"></span>
-          <strong>BLACK, RED &amp; GOLD</strong>
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-
-  <!-- NAVIGATION -->
-
-  <div class="page-buttons">
-
-    <button
-      class="page-btn"
-      onclick="showPage(2)"
-    >
-      ← BACK
-    </button>
-
-    <button
-      class="page-btn"
-      onclick="showPage(4)"
-    >
-      NEXT PAGE →
-    </button>
-
-  </div>
-
-</div>
-    <!-- =========================
-         PAGE 4 — FINAL CALL
-    ========================= -->
-
-    <div
-      class="passport-page"
-      id="page4"
-      style="display:none">
+    <div class="passport-page countdown-page" id="page4">
 
       <div class="page-head">
 
-        <div class="mini">
+        <div class="page-number">
           PASSPORT PAGE 04
         </div>
 
         <h2>
-          Final Call
+          The Countdown
         </h2>
+
+        <p>
+          UNTIL WE SAY “I DO”
+        </p>
 
       </div>
 
 
-      <div class="page-content">
+      <p class="countdown-intro">
 
-        <div class="stamp">
+        Your boarding time is approaching.
+        <br>
+        We cannot wait to celebrate with you.
 
-          <small>
-            BOARDING
-          </small>
+      </p>
 
-          <strong>
-            ♥
+
+      <div class="countdown">
+
+        <div class="time-box">
+
+          <strong id="days">
+            0
           </strong>
 
-          <small>
-            RESERVED
-          </small>
+          <span>
+            DAYS
+          </span>
 
         </div>
 
 
-        <p>
+        <div class="time-box">
 
-          Your seat is reserved for the
-          most beautiful journey of our lives.
+          <strong id="hours">
+            0
+          </strong>
 
-          <br><br>
+          <span>
+            HOURS
+          </span>
 
-          Keep your passport ready.
-          Our greatest adventure is about to begin.
+        </div>
 
-        </p>
 
+        <div class="time-box">
+
+          <strong id="minutes">
+            0
+          </strong>
+
+          <span>
+            MINUTES
+          </span>
+
+        </div>
+
+
+        <div class="time-box">
+
+          <strong id="seconds">
+            0
+          </strong>
+
+          <span>
+            SECONDS
+          </span>
+
+        </div>
+
+      </div>
+
+
+      <div class="final-message">
+        See you at the altar.
       </div>
 
 
       <div class="page-buttons">
 
-        <button
-          class="page-btn"
-          onclick="showPage(3)">
-
+        <button class="page-btn" onclick="showPage(3)">
           ← BACK
-
         </button>
 
-        <button
-          class="page-btn"
-          onclick="closePassport()">
-
-          RETURN TO INVITATION
-
+        <button class="page-btn" onclick="closePassport()">
+          RETURN TO COVER
         </button>
 
       </div>
 
     </div>
 
-  </div>
 
-</div>
-/* =========================================
-   WEDDING DETAILS PAGE
-   ========================================= */
+    <!-- FOOTER -->
 
-.details-page {
-  position: relative;
-  width: min(1380px, 94vw);
-  min-height: 92vh;
-  margin: 3vh auto;
-  padding: 35px 55px 30px;
-  box-sizing: border-box;
+    <div class="passport-footer">
 
-  background:
-    radial-gradient(
-      circle at 50% 25%,
-      rgba(105, 25, 35, 0.18),
-      transparent 45%
-    ),
-    #120d0b;
+      AIREEN &amp; MATEJ · DESTINATION FOREVER · 20 MAY 2027
 
-  border: 1px solid rgba(216, 181, 106, .65);
-
-  color: #f5e4bd;
-
-  overflow-y: auto;
-}
-
-.close-page {
-  position: absolute;
-  top: 18px;
-  right: 25px;
-
-  background: none;
-  border: none;
-
-  color: #e5c36e;
-  font-size: 25px;
-
-  cursor: pointer;
-}
-
-.passport-label {
-  text-align: center;
-
-  font-family: 'Cinzel', serif;
-
-  font-size: 11px;
-  letter-spacing: 6px;
-
-  color: #d8b56a;
-
-  margin-top: 5px;
-}
-
-
-.script-title {
-  text-align: center;
-
-  font-family: 'Pinyon Script', cursive;
-
-  font-size: clamp(55px, 7vw, 95px);
-
-  font-weight: 400;
-
-  color: #f7e7c2;
-
-  margin: 4px 0 20px;
-
-  line-height: 1;
-}
-
-
-.gold-divider {
-  width: 88%;
-  height: 1px;
-
-  margin: 0 auto 25px;
-
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(216,181,106,.8),
-    transparent
-  );
-}
-
-
-/* DATE / TIME */
-
-.wedding-info {
-  display: grid;
-
-  grid-template-columns: 1fr 1.4fr 1fr;
-
-  align-items: center;
-
-  gap: 30px;
-
-  text-align: center;
-
-  margin-bottom: 25px;
-}
-
-
-.destination-stamp {
-  width: 125px;
-  height: 125px;
-
-  border: 2px solid rgba(216,181,106,.65);
-
-  border-radius: 50%;
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-
-  align-items: center;
-
-  margin: auto;
-}
-
-
-.destination-stamp span,
-.destination-stamp small {
-  font-family: 'Cinzel', serif;
-
-  font-size: 8px;
-
-  letter-spacing: 3px;
-
-  color: #d8b56a;
-}
-
-
-.destination-stamp strong {
-  font-family: 'Cinzel', serif;
-
-  font-size: 22px;
-
-  margin: 6px 0;
-
-  color: #f1d68c;
-}
-
-
-.date-info h3 {
-  font-family: 'Cinzel', serif;
-
-  color: #d8b56a;
-
-  font-size: 25px;
-
-  margin: 0 0 8px;
-}
-
-
-.date-info p {
-  font-family: 'Cinzel', serif;
-
-  font-size: 22px;
-
-  margin: 0;
-
-  letter-spacing: 3px;
-}
-
-
-.date-info span {
-  font-family: 'Cinzel', serif;
-
-  font-size: 9px;
-
-  letter-spacing: 4px;
-
-  color: #bca98a;
-}
-
-
-.destination-icon {
-  font-size: 34px;
-
-  color: #d8b56a;
-
-  display: flex;
-
-  flex-direction: column;
-
-  align-items: center;
-}
-
-
-.destination-icon span {
-  font-family: 'Cinzel', serif;
-
-  font-size: 12px;
-
-  letter-spacing: 3px;
-
-  line-height: 1.6;
-
-  margin-top: 8px;
-}
-
-
-.destination-icon small {
-  font-family: 'Cinzel', serif;
-
-  font-size: 9px;
-
-  letter-spacing: 3px;
-
-  margin-top: 5px;
-
-  color: #bca98a;
-}
-
-
-/* VENUES */
-
-.venue-grid {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 45px;
-
-  max-width: 1100px;
-
-  margin: 0 auto 25px;
-}
-
-
-.venue-card {
-  text-align: center;
-}
-
-
-.venue-heading {
-  display: flex;
-
-  align-items: center;
-
-  gap: 15px;
-
-  justify-content: center;
-
-  font-family: 'Cinzel', serif;
-
-  letter-spacing: 4px;
-
-  font-size: 15px;
-
-  color: #d8b56a;
-
-  margin-bottom: 10px;
-}
-
-
-.venue-heading span {
-  width: 70px;
-  height: 1px;
-
-  background: rgba(216,181,106,.55);
-}
-
-
-.venue-photo {
-  width: 100%;
-
-  height: 170px;
-
-  object-fit: cover;
-
-  border-radius: 10px;
-
-  border: 1px solid rgba(216,181,106,.6);
-
-  display: block;
-}
-
-
-.venue-card h3 {
-  font-family: 'Cinzel', serif;
-
-  letter-spacing: 3px;
-
-  color: #e3bd68;
-
-  font-size: 17px;
-
-  margin: 10px 0 3px;
-}
-
-
-.venue-card p {
-  font-family: 'Cormorant Garamond', serif;
-
-  font-size: 16px;
-
-  line-height: 1.3;
-
-  margin: 0;
-
-  color: #dfd1b9;
-}
-
-
-/* DRESS CODE */
-
-.dress-code {
-  max-width: 1180px;
-
-  margin: 15px auto 25px;
-
-  padding: 18px 30px 20px;
-
-  border: 1px solid rgba(216,181,106,.65);
-
-  border-radius: 10px;
-
-  background: rgba(255,255,255,.015);
-}
-
-
-.dress-heading {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 25px;
-
-  text-align: center;
-
-  margin-bottom: 12px;
-}
-
-
-.dress-heading > span {
-  flex: 1;
-
-  height: 1px;
-
-  background: rgba(216,181,106,.5);
-}
-
-
-.dress-heading small {
-  display: block;
-
-  font-family: 'Cinzel', serif;
-
-  letter-spacing: 5px;
-
-  color: #d8b56a;
-
-  font-size: 9px;
-}
-
-
-.dress-heading h2 {
-  font-family: 'Pinyon Script', cursive;
-
-  font-size: 40px;
-
-  font-weight: 400;
-
-  margin: 0;
-
-  color: #f5dfaa;
-}
-
-
-.dress-heading p {
-  font-family: 'Cormorant Garamond', serif;
-
-  margin: 0;
-
-  font-size: 15px;
-
-  color: #cbbca4;
-}
-
-
-.dress-grid {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-
-  gap: 40px;
-}
-
-
-.dress-group {
-  text-align: center;
-}
-
-
-.dress-group h3 {
-  font-family: 'Cinzel', serif;
-
-  font-size: 11px;
-
-  letter-spacing: 4px;
-
-  color: #d8b56a;
-
-  margin: 0 0 7px;
-}
-
-
-.dress-photo {
-  width: 100%;
-
-  height: 190px;
-
-  object-fit: contain;
-
-  display: block;
-
-  margin: auto;
-}
-
-
-.color-label {
-  display: flex;
-
-  justify-content: center;
-
-  align-items: center;
-
-  gap: 7px;
-
-  flex-wrap: wrap;
-
-  margin-top: 5px;
-}
-
-
-.color-label strong {
-  font-family: 'Cinzel', serif;
-
-  font-size: 11px;
-
-  letter-spacing: 4px;
-
-  color: #d8b56a;
-
-  margin-left: 8px;
-}
-
-
-.color-dot {
-  width: 18px;
-  height: 18px;
-
-  border-radius: 50%;
-
-  display: inline-block;
-
-  border: 1px solid rgba(255,255,255,.35);
-}
-
-
-.color-dot.red {
-  background: #9b1025;
-}
-
-
-.color-dot.gold {
-  background: #d7ae55;
-}
-
-
-.color-dot.black {
-  background: #090909;
-}
-
-
-/* NAVIGATION */
-
-.page-navigation {
-  display: flex;
-
-  justify-content: center;
-
-  gap: 12px;
-
-  margin-top: 10px;
-}
-
-
-.page-navigation button {
-  background: #59151d;
-
-  border: 1px solid #d8b56a;
-
-  color: #f2dfb3;
-
-  padding: 9px 22px;
-
-  font-family: 'Cinzel', serif;
-
-  font-size: 9px;
-
-  letter-spacing: 3px;
-
-  cursor: pointer;
-
-  transition: .3s;
-}
-
-
-.page-navigation button:hover {
-  background: #7a2029;
-
-  transform: translateY(-2px);
-}
-
-
-/* MOBILE */
-
-@media (max-width: 800px) {
-
-  .details-page {
-    width: 96vw;
-
-    padding: 28px 18px 25px;
-
-    min-height: 94vh;
-  }
-
-
-  .wedding-info {
-    grid-template-columns: 1fr;
-
-    gap: 15px;
-  }
-
-
-  .destination-stamp {
-    width: 90px;
-    height: 90px;
-  }
-
-
-  .venue-grid,
-  .dress-grid {
-    grid-template-columns: 1fr;
-
-    gap: 25px;
-  }
-
-
-  .venue-photo {
-    height: 150px;
-  }
-
-
-  .dress-photo {
-    height: 170px;
-  }
-
-
-  .dress-heading > span {
-    display: none;
-  }
-
-
-  .dress-heading h2 {
-    font-size: 34px;
-  }
-
-}
-
-
-<!-- =========================
-     LOVE STORY SECTION
-========================= -->
-
-<section class="section">
-
-  <div class="content">
-
-    <div class="eyebrow">
-      OUR JOURNEY
     </div>
 
-    <h2>
-      Our Love Story
-    </h2>
-
-    <div class="ornament">
-      ❦
-    </div>
-
-    <p class="story-text">
-
-      Every love story has a beginning.
-      Ours became a journey filled with memories,
-      adventures, laughter, challenges and countless
-      little moments that brought us closer together.
-
-      <br><br>
-
-      And now, we're ready for our next destination —
-      forever.
-
-    </p>
 
   </div>
 
 </section>
-
-
-
-<!-- =========================
-     WEDDING DETAILS
-========================= -->
-
-<section class="section">
-
-  <div class="content">
-
-    <div class="eyebrow">
-      THE DESTINATION
-    </div>
-
-    <h2>
-      Our Wedding
-    </h2>
-
-
-    <div class="details">
-
-      <div class="detail-card">
-
-        <div class="detail-icon">
-          📅
-        </div>
-
-        <h3>
-          DATE
-        </h3>
-
-        <p>
-          May 20, 2027
-        </p>
-
-      </div>
-
-
-      <div class="detail-card">
-
-        <div class="detail-icon">
-          💍
-        </div>
-
-        <h3>
-          CELEBRATION
-        </h3>
-
-        <p>
-          Ceremony & Reception
-        </p>
-
-      </div>
-
-
-      <div class="detail-card">
-
-        <div class="detail-icon">
-          📍
-        </div>
-
-        <h3>
-          LOCATION
-        </h3>
-
-        <p>
-          Philippines
-        </p>
-
-      </div>
-
-    </div>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     FINAL CALL
-========================= -->
-
-<section class="section">
-
-  <div class="content">
-
-    <div class="eyebrow">
-      FINAL CALL
-    </div>
-
-    <h2>
-      Your Seat Is Reserved
-    </h2>
-
-    <div class="ornament">
-      ♥
-    </div>
-
-    <p class="story-text">
-
-      We can't wait to celebrate this
-      beautiful chapter with the people we love.
-
-      <br><br>
-
-      Until then, keep your passport ready.
-      Our greatest adventure is about to begin.
-
-    </p>
-
-  </div>
-
-</section>
-
-
-
-<!-- =========================
-     FOOTER
-========================= -->
-
-<footer>
-
-  <div class="names-small">
-    Aireen & Matej
-  </div>
-
-  <p>
-    MAY 20 · 2027
-  </p>
-
-</footer>
 
 
 
 <script>
 
-/* =========================
-   PASSPORT CONTROLS
-========================= */
+/* =========================================================
+   PASSPORT OPEN / CLOSE
+========================================================= */
 
 function openPassport(){
 
-  document
-    .getElementById("passportOverlay")
-    .classList
-    .add("open");
+  document.getElementById("landing").style.display = "none";
 
-  document.body.style.overflow="hidden";
+  document.getElementById("passport").style.display = "block";
 
   showPage(1);
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
 }
 
 
 function closePassport(){
 
-  document
-    .getElementById("passportOverlay")
-    .classList
-    .remove("open");
+  document.getElementById("passport").style.display = "none";
 
-  document.body.style.overflow="";
+  document.getElementById("landing").style.display = "flex";
 
-  document
-    .getElementById("passportCover")
-    .classList
-    .remove("hidden");
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
 }
 
 
-function showPage(n){
+/* =========================================================
+   PAGE NAVIGATION
+========================================================= */
 
-  document
-    .getElementById("passportCover")
-    .classList
-    .toggle("hidden",n!==0);
+function showPage(pageNumber){
 
+  const pages = document.querySelectorAll(".passport-page");
 
-  document
-    .querySelectorAll(".passport-page")
-    .forEach(page => {
+  pages.forEach(function(page){
 
-      page.style.display="none";
+    page.classList.remove("active");
 
-    });
+  });
 
 
-  if(n>0){
+  const selectedPage =
+    document.getElementById("page" + pageNumber);
 
-    document
-      .getElementById("page"+n)
-      .style.display="block";
+  if(selectedPage){
+
+    selectedPage.classList.add("active");
 
   }
 
+
+  window.scrollTo({
+    top:0,
+    behavior:"smooth"
+  });
+
 }
 
 
-/* =========================
+/* =========================================================
    COUNTDOWN
-========================= */
+========================================================= */
+
+/*
+   May 20, 2027
+   3:30 PM
+   Philippine Time (UTC+8)
+*/
 
 const weddingDate =
-  new Date("2027-05-20T00:00:00");
+  new Date("2027-05-20T15:30:00+08:00");
 
 
 function updateCountdown(){
 
-  const diff =
-    weddingDate - new Date();
+  const now = new Date();
+
+  const difference =
+    weddingDate.getTime() - now.getTime();
 
 
-  document.getElementById("days")
-    .textContent =
-    Math.max(
-      0,
-      Math.floor(diff / 86400000)
+  if(difference <= 0){
+
+    document.getElementById("days").textContent = "0";
+    document.getElementById("hours").textContent = "0";
+    document.getElementById("minutes").textContent = "0";
+    document.getElementById("seconds").textContent = "0";
+
+    return;
+
+  }
+
+
+  const days =
+    Math.floor(
+      difference / (1000 * 60 * 60 * 24)
+    );
+
+  const hours =
+    Math.floor(
+      (difference / (1000 * 60 * 60)) % 24
+    );
+
+  const minutes =
+    Math.floor(
+      (difference / (1000 * 60)) % 60
+    );
+
+  const seconds =
+    Math.floor(
+      (difference / 1000) % 60
     );
 
 
-  document.getElementById("hours")
-    .textContent =
-    Math.max(
-      0,
-      Math.floor(diff / 3600000) % 24
-    );
+  document.getElementById("days").textContent =
+    days;
 
+  document.getElementById("hours").textContent =
+    hours;
 
-  document.getElementById("minutes")
-    .textContent =
-    Math.max(
-      0,
-      Math.floor(diff / 60000) % 60
-    );
+  document.getElementById("minutes").textContent =
+    minutes;
 
-
-  document.getElementById("seconds")
-    .textContent =
-    Math.max(
-      0,
-      Math.floor(diff / 1000) % 60
-    );
+  document.getElementById("seconds").textContent =
+    seconds;
 
 }
 
 
 updateCountdown();
 
-setInterval(
-  updateCountdown,
-  1000
-);
-
-
-/* CLOSE WHEN CLICKING OUTSIDE */
-
-document
-  .getElementById("passportOverlay")
-  .addEventListener(
-    "click",
-    event => {
-
-      if(
-        event.target === event.currentTarget
-      ){
-
-        closePassport();
-
-      }
-
-    }
-  );
+setInterval(updateCountdown,1000);
 
 </script>
 
