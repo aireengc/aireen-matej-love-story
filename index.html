@@ -1342,36 +1342,21 @@ footer p{
 
 
     <!-- =========================
-         PAGE 3 — DETAILS
-    ========================= -->
+     PAGE 3 — WEDDING DETAILS
+========================= -->
 
-    <div
-      class="passport-page"
-      id="page3"
-      style="display:none">
+<div
+  class="passport-page details-page"
+  id="page3"
+  style="display:none"
+>
 
-      <div class="page-head">
-
-        <div class="mini">
-          PASSPORT PAGE 03
-        </div>
-
-        <h2>
-          Wedding Details
-        <section class="page details-page" id="details">
-
-  <button class="close-page" onclick="closePage('details')">×</button>
-
-  <div class="passport-label">
-    PASSPORT PAGE 03
+  <div class="page-head">
+    <div class="mini">PASSPORT PAGE 03</div>
+    <h2>Wedding Details</h2>
   </div>
 
-  <h2 class="script-title">Wedding Details</h2>
-
-  <div class="gold-divider"></div>
-
-  <!-- DATE & TIME -->
-  <div class="wedding-info">
+  <div class="details-top">
 
     <div class="destination-stamp">
       <span>COUNTRY</span>
@@ -1387,7 +1372,10 @@ footer p{
 
     <div class="destination-icon">
       ♡
-      <span>CEREMONY<br>&amp; RECEPTION</span>
+      <span>
+        CEREMONY<br>
+        &amp; RECEPTION
+      </span>
       <small>CEBU, PHILIPPINES</small>
     </div>
 
@@ -1395,6 +1383,7 @@ footer p{
 
 
   <!-- VENUES -->
+
   <div class="venue-grid">
 
     <div class="venue-card">
@@ -1407,14 +1396,14 @@ footer p{
 
       <img
         src="ceremony.jpg"
-        alt="Turtle Garden"
+        alt="Turtle Garden at JPark Island Resort"
         class="venue-photo"
       >
 
       <h3>TURTLE GARDEN</h3>
 
       <p>
-        Jpark Island Resort and Waterpark<br>
+        JPark Island Resort and Waterpark<br>
         Cebu, Philippines
       </p>
 
@@ -1431,14 +1420,14 @@ footer p{
 
       <img
         src="reception.jpg"
-        alt="Marcela Pavilion"
+        alt="Marcela Pavilion at JPark Island Resort"
         class="venue-photo"
       >
 
       <h3>MARCELA PAVILION</h3>
 
       <p>
-        Jpark Island Resort and Waterpark<br>
+        JPark Island Resort and Waterpark<br>
         Cebu, Philippines
       </p>
 
@@ -1448,22 +1437,26 @@ footer p{
 
 
   <!-- DRESS CODE -->
+
   <div class="dress-code">
 
     <div class="dress-heading">
+
       <span></span>
+
       <div>
         <small>DRESS CODE</small>
         <h2>Formal Beach Attire</h2>
         <p>Elegant · Tropical · Beach-Ready</p>
       </div>
+
       <span></span>
+
     </div>
 
 
     <div class="dress-grid">
 
-      <!-- WOMEN -->
       <div class="dress-group">
 
         <h3>FOR WOMEN</h3>
@@ -1483,14 +1476,13 @@ footer p{
       </div>
 
 
-      <!-- MEN -->
       <div class="dress-group">
 
         <h3>FOR MEN</h3>
 
         <img
           src="men-dress-code.jpg"
-          alt="Men's black red and gold formal beach attire"
+          alt="Men's black, red and gold formal beach attire"
           class="dress-photo"
         >
 
@@ -1509,20 +1501,26 @@ footer p{
 
 
   <!-- NAVIGATION -->
-  <div class="page-navigation">
 
-    <button onclick="closePage('details')">
+  <div class="page-buttons">
+
+    <button
+      class="page-btn"
+      onclick="showPage(2)"
+    >
       ← BACK
     </button>
 
-    <button onclick="openPage('rsvp')">
+    <button
+      class="page-btn"
+      onclick="showPage(4)"
+    >
       NEXT PAGE →
     </button>
 
   </div>
 
-</section>
-
+</div>
     <!-- =========================
          PAGE 4 — FINAL CALL
     ========================= -->
