@@ -3,195 +3,1833 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Aireen & Matej | Our Love Story</title>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
 <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Cormorant+Garamond:wght@300;400;500;600&family=Montserrat:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+
 <style>
-:root{--black:#070606;--wine:#5e0d18;--red:#a4162b;--gold:#d8b56a;--cream:#f4e5c2;--muted:#bdb19e}
-*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
-body{background:var(--black);color:var(--cream);font-family:Montserrat,sans-serif;overflow-x:hidden}
-button{font:inherit;cursor:pointer}
-.hero{min-height:100vh;position:relative;display:flex;align-items:center;justify-content:center;padding:30px 18px;overflow:hidden;background:radial-gradient(circle at 50% 42%,rgba(132,17,35,.42),transparent 32%),linear-gradient(rgba(0,0,0,.15),rgba(0,0,0,.88)),#090707}
-.hero:after{content:"";position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at 50% 100%,rgba(89,13,24,.35),transparent 55%)}
-.forest{position:absolute;inset:0;overflow:hidden;pointer-events:none}
-.tree{position:absolute;bottom:-30px;width:0;height:0;border-left:90px solid transparent;border-right:90px solid transparent;border-bottom:270px solid rgba(14,12,12,.92)}
-.tree:after{content:"";position:absolute;left:-65px;top:95px;border-left:65px solid transparent;border-right:65px solid transparent;border-bottom:190px solid rgba(8,8,8,.95)}
-.tree:nth-child(1){left:-30px;transform:scale(1.25)}.tree:nth-child(2){left:20%;transform:scale(.72)}.tree:nth-child(3){right:18%;transform:scale(1.05)}.tree:nth-child(4){right:-45px;transform:scale(1.4)}
-.mist{position:absolute;left:-20%;width:140%;height:170px;border-radius:50%;background:rgba(235,220,190,.035);filter:blur(25px);animation:mist 14s ease-in-out infinite alternate}.mist.one{bottom:15%}.mist.two{bottom:35%;animation-delay:-5s;opacity:.55}
-@keyframes mist{from{transform:translateX(-5%)}to{transform:translateX(5%)}}
-.particle{position:absolute;width:3px;height:3px;border-radius:50%;background:var(--gold);opacity:.45;animation:float 7s ease-in-out infinite}
-.p1{left:15%;top:22%}.p2{left:80%;top:25%;animation-delay:1s}.p3{left:32%;top:68%;animation-delay:2s}.p4{left:70%;top:72%;animation-delay:3s}.p5{left:54%;top:14%;animation-delay:4s}
-@keyframes float{50%{transform:translateY(-28px);opacity:.95}}
-.boarding-pass{position:relative;z-index:5;width:min(980px,95vw);min-height:500px;display:grid;grid-template-columns:1fr 190px;overflow:hidden;border:1px solid rgba(216,181,106,.7);border-radius:9px;background:linear-gradient(135deg,rgba(20,17,17,.96),rgba(48,7,15,.94));box-shadow:0 35px 100px rgba(0,0,0,.8),0 0 60px rgba(130,15,35,.18);animation:appear 1.2s ease}
-@keyframes appear{from{opacity:0;transform:translateY(30px) scale(.97)}to{opacity:1;transform:none}}
-.ticket-main{padding:58px 65px;position:relative}.ticket-main:after{content:"";position:absolute;right:0;top:0;height:100%;border-right:2px dashed rgba(216,181,106,.55)}
-.small-title,.stub-label,.eyebrow{font-family:Cinzel,serif;letter-spacing:5px;color:var(--gold);font-size:11px}
-.small-title{margin-bottom:28px}
+
+:root{
+  --black:#070606;
+  --wine:#5e0d18;
+  --red:#a4162b;
+  --gold:#d8b56a;
+  --cream:#f4e5c2;
+  --muted:#bdb19e;
+}
+
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--black);
+  color:var(--cream);
+  font-family:Montserrat,sans-serif;
+  overflow-x:hidden;
+}
+
+button{
+  font:inherit;
+  cursor:pointer;
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.hero{
+  min-height:100vh;
+  position:relative;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:30px 18px;
+  overflow:hidden;
+
+  background:
+    radial-gradient(
+      circle at 50% 42%,
+      rgba(132,17,35,.42),
+      transparent 32%
+    ),
+    linear-gradient(
+      rgba(0,0,0,.15),
+      rgba(0,0,0,.88)
+    ),
+    #090707;
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+
+  background:
+    radial-gradient(
+      ellipse at 50% 100%,
+      rgba(89,13,24,.35),
+      transparent 55%
+    );
+}
+
+.forest{
+  position:absolute;
+  inset:0;
+  overflow:hidden;
+  pointer-events:none;
+}
+
+.tree{
+  position:absolute;
+  bottom:-30px;
+  width:0;
+  height:0;
+
+  border-left:90px solid transparent;
+  border-right:90px solid transparent;
+  border-bottom:270px solid rgba(14,12,12,.92);
+}
+
+.tree:after{
+  content:"";
+  position:absolute;
+  left:-65px;
+  top:95px;
+
+  border-left:65px solid transparent;
+  border-right:65px solid transparent;
+  border-bottom:190px solid rgba(8,8,8,.95);
+}
+
+.tree:nth-child(1){
+  left:-30px;
+  transform:scale(1.25);
+}
+
+.tree:nth-child(2){
+  left:20%;
+  transform:scale(.72);
+}
+
+.tree:nth-child(3){
+  right:18%;
+  transform:scale(1.05);
+}
+
+.tree:nth-child(4){
+  right:-45px;
+  transform:scale(1.4);
+}
+
+.mist{
+  position:absolute;
+  left:-20%;
+  width:140%;
+  height:170px;
+  border-radius:50%;
+
+  background:rgba(235,220,190,.035);
+
+  filter:blur(25px);
+
+  animation:mist 14s ease-in-out infinite alternate;
+}
+
+.mist.one{
+  bottom:15%;
+}
+
+.mist.two{
+  bottom:35%;
+  animation-delay:-5s;
+  opacity:.55;
+}
+
+@keyframes mist{
+  from{
+    transform:translateX(-5%);
+  }
+
+  to{
+    transform:translateX(5%);
+  }
+}
+
+.particle{
+  position:absolute;
+  width:3px;
+  height:3px;
+  border-radius:50%;
+
+  background:var(--gold);
+  opacity:.45;
+
+  animation:float 7s ease-in-out infinite;
+}
+
+.p1{left:15%;top:22%}
+.p2{left:80%;top:25%;animation-delay:1s}
+.p3{left:32%;top:68%;animation-delay:2s}
+.p4{left:70%;top:72%;animation-delay:3s}
+.p5{left:54%;top:14%;animation-delay:4s}
+
+@keyframes float{
+  50%{
+    transform:translateY(-28px);
+    opacity:.95;
+  }
+}
+
+
+/* =========================
+   BOARDING PASS
+========================= */
+
+.boarding-pass{
+  position:relative;
+  z-index:5;
+
+  width:min(980px,95vw);
+  min-height:500px;
+
+  display:grid;
+  grid-template-columns:1fr 190px;
+
+  overflow:hidden;
+
+  border:1px solid rgba(216,181,106,.7);
+  border-radius:9px;
+
+  background:
+    linear-gradient(
+      135deg,
+      rgba(20,17,17,.96),
+      rgba(48,7,15,.94)
+    );
+
+  box-shadow:
+    0 35px 100px rgba(0,0,0,.8),
+    0 0 60px rgba(130,15,35,.18);
+
+  animation:appear 1.2s ease;
+}
+
+@keyframes appear{
+  from{
+    opacity:0;
+    transform:translateY(30px) scale(.97);
+  }
+
+  to{
+    opacity:1;
+    transform:none;
+  }
+}
+
+.ticket-main{
+  padding:58px 65px;
+  position:relative;
+}
+
+.ticket-main:after{
+  content:"";
+  position:absolute;
+  right:0;
+  top:0;
+  height:100%;
+
+  border-right:2px dashed rgba(216,181,106,.55);
+}
+
+.small-title,
+.stub-label,
+.eyebrow{
+  font-family:Cinzel,serif;
+  letter-spacing:5px;
+  color:var(--gold);
+  font-size:11px;
+}
+
+.small-title{
+  margin-bottom:28px;
+}
+
+
+/* ELEGANT CURSIVE NAMES */
+
 .names{
   font-family:"Pinyon Script",cursive;
+
   font-size:clamp(58px,8vw,92px);
+
   line-height:.9;
+
   font-weight:400;
+
   color:#f7e7c3;
-  text-shadow:0 4px 25px rgba(0,0,0,.3);
+
+  text-shadow:
+    0 4px 25px rgba(0,0,0,.3);
+
   white-space:nowrap;
+
   letter-spacing:-1px;
 }
-.ampersand{color:var(--red);font-size:.65em;margin:0 7px}
-.destination{margin-top:42px;font-family:Cinzel,serif;letter-spacing:4px;font-size:13px;color:var(--gold)}
-.date{margin-top:14px;font-family:Cinzel,serif;font-size:24px;letter-spacing:5px}
-.tagline{margin-top:27px;color:#c9bead;font-family:"Cormorant Garamond",serif;font-size:20px;line-height:1.35;max-width:560px}
-.begin-button{margin-top:30px;padding:14px 25px;border:1px solid #b99752;background:rgba(100,10,20,.52);color:var(--cream);font-family:Cinzel,serif;font-size:10px;letter-spacing:3px;transition:.3s}
-.begin-button:hover{background:#8e1729;border-color:#f0d28a;transform:translateY(-2px);box-shadow:0 10px 30px rgba(120,10,30,.35)}
-.ticket-stub{padding:35px 22px;display:flex;flex-direction:column;justify-content:space-between;align-items:center;text-align:center;background:rgba(0,0,0,.18)}
-.flight{font-family:Cinzel,serif;font-size:30px;letter-spacing:4px}.route{font-size:10px;letter-spacing:2px;color:#bdb09b;margin-top:5px}.gold-line{width:45px;height:1px;background:var(--gold);margin:12px auto}.barcode{width:88px;height:82px;background:repeating-linear-gradient(90deg,#e5d3aa 0 2px,transparent 2px 5px);opacity:.75}
-.passport-overlay{position:fixed;inset:0;z-index:30;display:none;align-items:center;justify-content:center;padding:18px;background:rgba(0,0,0,.82);backdrop-filter:blur(10px)}.passport-overlay.open{display:flex}
-.passport{width:min(900px,96vw);height:min(680px,92vh);position:relative;background:#17110e;border:1px solid rgba(216,181,106,.55);box-shadow:0 30px 100px #000;overflow:hidden}
-.passport-cover{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;background:radial-gradient(circle at 50% 45%,#65101e,#26070c 60%,#100607);transition:.7s;z-index:3}
-.passport-cover.hidden{transform:translateX(-100%);opacity:0;pointer-events:none}.passport-symbol{font-size:58px;color:var(--gold);margin-bottom:20px}.passport-cover h3{font-family:Cinzel,serif;letter-spacing:7px;font-weight:400;color:var(--gold)}
-.cover-names{font-family:"Pinyon Script",cursive;font-size:80px;color:var(--cream);margin:15px 0}.open-passport{padding:13px 24px;background:transparent;border:1px solid var(--gold);color:var(--cream);font-family:Cinzel,serif;letter-spacing:3px;font-size:10px}
-.passport-page{position:absolute;inset:0;padding:52px 58px;background:linear-gradient(135deg,#211814,#120e0c);overflow:auto}
-.page-head{text-align:center;border-bottom:1px solid rgba(216,181,106,.25);padding-bottom:20px;margin-bottom:28px}.page-head .mini{font-family:Cinzel,serif;font-size:9px;letter-spacing:4px;color:var(--gold)}
-.page-head h2{font-family:"Pinyon Script",cursive;font-size:65px;font-weight:400;color:var(--cream)}
-.page-content{text-align:center;max-width:680px;margin:auto}.page-content p{font-family:"Cormorant Garamond",serif;font-size:21px;line-height:1.55;color:#d1c5b1}
-.stamp{display:inline-flex;width:155px;height:155px;border:2px solid rgba(216,181,106,.65);border-radius:50%;align-items:center;justify-content:center;flex-direction:column;margin:18px;color:var(--gold);transform:rotate(-7deg);font-family:Cinzel,serif;letter-spacing:2px}
-.stamp strong{font-size:22px;margin:6px 0}.stamp small{font-size:8px}
-.page-buttons{position:absolute;left:0;right:0;bottom:18px;display:flex;justify-content:center;gap:10px}.page-btn{padding:10px 16px;background:rgba(95,13,25,.55);border:1px solid rgba(216,181,106,.45);color:var(--cream);font-family:Cinzel,serif;font-size:9px;letter-spacing:2px}
-.close-passport{position:absolute;right:14px;top:12px;z-index:10;border:0;background:transparent;color:var(--gold);font-size:25px}
-.countdown{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:30px}.timebox{min-width:95px;padding:16px 12px;border:1px solid rgba(216,181,106,.28);background:rgba(255,255,255,.025)}.timebox strong{display:block;font-family:Cinzel,serif;font-size:25px;color:var(--gold)}.timebox span{font-size:8px;letter-spacing:3px;color:#a99d8b}
-.section{min-height:100vh;padding:110px 24px;display:flex;align-items:center;justify-content:center;background:radial-gradient(circle at 50% 20%,rgba(116,15,28,.18),transparent 40%),#090707}
-.content{max-width:850px;text-align:center}.eyebrow{margin-bottom:18px}h2{font-family:"Pinyon Script",cursive;font-size:clamp(65px,9vw,100px);font-weight:400;color:var(--cream);margin-bottom:25px}
-.story-text{font-family:"Cormorant Garamond",serif;color:#c7bba5;line-height:1.8;font-size:21px;max-width:650px;margin:auto}.ornament{color:var(--red);font-size:32px;margin:20px 0}
-.details{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:40px}.detail-card{padding:32px 18px;border:1px solid rgba(216,181,106,.25);background:rgba(255,255,255,.025)}.detail-icon{font-size:27px;margin-bottom:13px}.detail-card h3{font-family:Cinzel,serif;font-size:12px;letter-spacing:2px;color:var(--gold);margin-bottom:10px}.detail-card p{font-family:"Cormorant Garamond",serif;font-size:19px;color:#c7bba5}
-footer{text-align:center;padding:55px 20px;background:#050505;border-top:1px solid rgba(216,181,106,.15)}.names-small{font-family:"Pinyon Script",cursive;font-size:55px;color:#e7d4aa}footer p{margin-top:8px;font-family:Cinzel,serif;font-size:9px;letter-spacing:4px;color:#8f8370}
-@media(max-width:700px){.boarding-pass{grid-template-columns:1fr}.ticket-main{padding:43px 28px}.ticket-main:after{display:none}.ticket-stub{border-top:2px dashed rgba(216,181,106,.5);min-height:180px;padding:22px}.barcode{display:none}.names{font-size:76px}.tagline{font-size:18px}.date{font-size:18px}.details{grid-template-columns:1fr}.passport-page{padding:45px 24px 80px}.cover-names{font-size:62px}.page-head h2{font-size:55px}.page-content p{font-size:19px}.timebox{min-width:75px}}
-</style>/* OUR JOURNEY PHOTO — COMPACT ONE-PAGE VERSION */
-.journey-photo {
-  width: min(300px, 70vw);
-  margin: 14px auto 10px;
-  padding: 5px;
-  border: 1px solid rgba(216,181,106,.45);
-  background: rgba(255,255,255,.025);
-  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+
+.ampersand{
+  color:var(--red);
+  font-size:.65em;
+  margin:0 7px;
 }
 
-.journey-photo img {
-  display: block;
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
-  object-position: center 35%;
+.destination{
+  margin-top:42px;
+
+  font-family:Cinzel,serif;
+  letter-spacing:4px;
+  font-size:13px;
+
+  color:var(--gold);
 }
 
-.journey-caption {
-  text-align: center;
-  margin: 7px 0 0 !important;
-  font-family: Cinzel, serif !important;
-  font-size: 8px !important;
-  letter-spacing: 2px !important;
-  color: #d8b56a !important;
-  text-transform: uppercase;
+.date{
+  margin-top:14px;
+
+  font-family:Cinzel,serif;
+  font-size:24px;
+  letter-spacing:5px;
 }
 
-/* OUR JOURNEY PHOTO — COMPACT ONE-PAGE VERSION */
-.journey-photo {
-  width: min(300px, 70vw);
-  margin: 14px auto 10px;
-  padding: 5px;
-  border: 1px solid rgba(216,181,106,.45);
-  background: rgba(255,255,255,.025);
-  box-shadow: 0 8px 20px rgba(0,0,0,.25);
+.tagline{
+  margin-top:27px;
+
+  color:#c9bead;
+
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:20px;
+  line-height:1.35;
+
+  max-width:560px;
 }
 
-.journey-photo img {
-  display: block;
-  width: 100%;
-  height: 170px;
-  object-fit: cover;
-  object-position: center 35%;
+.begin-button{
+  margin-top:30px;
+
+  padding:14px 25px;
+
+  border:1px solid #b99752;
+
+  background:rgba(100,10,20,.52);
+
+  color:var(--cream);
+
+  font-family:Cinzel,serif;
+
+  font-size:10px;
+  letter-spacing:3px;
+
+  transition:.3s;
 }
 
-.journey-caption {
-  text-align: center;
-  margin: 7px 0 0 !important;
-  font-family: Cinzel, serif !important;
-  font-size: 8px !important;
-  letter-spacing: 2px !important;
-  color: #d8b56a !important;
-  text-transform: uppercase;
+.begin-button:hover{
+  background:#8e1729;
+  border-color:#f0d28a;
+
+  transform:translateY(-2px);
+
+  box-shadow:
+    0 10px 30px rgba(120,10,30,.35);
 }
+
+
+/* =========================
+   BOARDING PASS STUB
+========================= */
+
+.ticket-stub{
+  padding:35px 22px;
+
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  align-items:center;
+
+  text-align:center;
+
+  background:rgba(0,0,0,.18);
+}
+
+.flight{
+  font-family:Cinzel,serif;
+  font-size:30px;
+  letter-spacing:4px;
+}
+
+.route{
+  font-size:10px;
+  letter-spacing:2px;
+  color:#bdb09b;
+  margin-top:5px;
+}
+
+.gold-line{
+  width:45px;
+  height:1px;
+
+  background:var(--gold);
+
+  margin:12px auto;
+}
+
+.barcode{
+  width:88px;
+  height:82px;
+
+  background:
+    repeating-linear-gradient(
+      90deg,
+      #e5d3aa 0 2px,
+      transparent 2px 5px
+    );
+
+  opacity:.75;
+}
+
+
+/* =========================
+   PASSPORT
+========================= */
+
+.passport-overlay{
+  position:fixed;
+  inset:0;
+
+  z-index:30;
+
+  display:none;
+
+  align-items:center;
+  justify-content:center;
+
+  padding:18px;
+
+  background:rgba(0,0,0,.82);
+
+  backdrop-filter:blur(10px);
+}
+
+.passport-overlay.open{
+  display:flex;
+}
+
+.passport{
+  width:min(900px,96vw);
+
+  height:min(680px,92vh);
+
+  position:relative;
+
+  background:#17110e;
+
+  border:1px solid rgba(216,181,106,.55);
+
+  box-shadow:0 30px 100px #000;
+
+  overflow:hidden;
+}
+
+.passport-cover{
+  position:absolute;
+  inset:0;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  flex-direction:column;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      #65101e,
+      #26070c 60%,
+      #100607
+    );
+
+  transition:.7s;
+
+  z-index:3;
+}
+
+.passport-cover.hidden{
+  transform:translateX(-100%);
+  opacity:0;
+  pointer-events:none;
+}
+
+.passport-symbol{
+  font-size:58px;
+  color:var(--gold);
+  margin-bottom:20px;
+}
+
+.passport-cover h3{
+  font-family:Cinzel,serif;
+  letter-spacing:7px;
+  font-weight:400;
+  color:var(--gold);
+}
+
+.cover-names{
+  font-family:"Pinyon Script",cursive;
+  font-size:80px;
+  color:var(--cream);
+  margin:15px 0;
+}
+
+.open-passport{
+  padding:13px 24px;
+
+  background:transparent;
+
+  border:1px solid var(--gold);
+
+  color:var(--cream);
+
+  font-family:Cinzel,serif;
+
+  letter-spacing:3px;
+
+  font-size:10px;
+}
+
+.close-passport{
+  position:absolute;
+
+  right:14px;
+  top:12px;
+
+  z-index:10;
+
+  border:0;
+
+  background:transparent;
+
+  color:var(--gold);
+
+  font-size:25px;
+}
+
+
+/* =========================
+   PASSPORT PAGES
+========================= */
+
+.passport-page{
+  position:absolute;
+  inset:0;
+
+  padding:40px 58px 70px;
+
+  background:
+    linear-gradient(
+      135deg,
+      #211814,
+      #120e0c
+    );
+
+  overflow:hidden;
+}
+
+.page-head{
+  text-align:center;
+
+  border-bottom:1px solid rgba(216,181,106,.25);
+
+  padding-bottom:15px;
+
+  margin-bottom:12px;
+}
+
+.page-head .mini{
+  font-family:Cinzel,serif;
+
+  font-size:9px;
+
+  letter-spacing:4px;
+
+  color:var(--gold);
+}
+
+.page-head h2{
+  font-family:"Pinyon Script",cursive;
+
+  font-size:62px;
+
+  font-weight:400;
+
+  color:var(--cream);
+
+  margin:2px 0 0;
+}
+
+.page-content{
+  text-align:center;
+
+  max-width:680px;
+
+  margin:auto;
+}
+
+.page-content p{
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:19px;
+
+  line-height:1.3;
+
+  color:#d1c5b1;
+}
+
+.stamp{
+  display:inline-flex;
+
+  width:105px;
+  height:105px;
+
+  border:2px solid rgba(216,181,106,.65);
+
+  border-radius:50%;
+
+  align-items:center;
+  justify-content:center;
+
+  flex-direction:column;
+
+  margin:4px 18px 10px;
+
+  color:var(--gold);
+
+  transform:rotate(-7deg);
+
+  font-family:Cinzel,serif;
+
+  letter-spacing:2px;
+}
+
+.stamp strong{
+  font-size:17px;
+  margin:4px 0;
+}
+
+.stamp small{
+  font-size:6px;
+}
+
+
+/* =========================
+   JOURNEY PHOTO
+========================= */
+
+.journey-photo{
+  width:min(235px,58vw);
+
+  margin:9px auto 5px;
+
+  padding:4px;
+
+  border:1px solid rgba(216,181,106,.45);
+
+  background:rgba(255,255,255,.025);
+
+  box-shadow:
+    0 8px 20px rgba(0,0,0,.25);
+}
+
+.journey-photo img{
+  display:block;
+
+  width:100%;
+
+  height:118px;
+
+  object-fit:cover;
+
+  object-position:center 35%;
+}
+
+.journey-caption{
+  text-align:center;
+
+  margin:5px 0 0 !important;
+
+  font-family:Cinzel,serif !important;
+
+  font-size:7px !important;
+
+  letter-spacing:2px !important;
+
+  color:#d8b56a !important;
+
+  text-transform:uppercase;
+}
+
+
+/* =========================
+   PASSPORT BUTTONS
+========================= */
+
+.page-buttons{
+  position:absolute;
+
+  left:0;
+  right:0;
+
+  bottom:12px;
+
+  display:flex;
+
+  justify-content:center;
+
+  gap:10px;
+}
+
+.page-btn{
+  padding:9px 16px;
+
+  background:rgba(95,13,25,.55);
+
+  border:1px solid rgba(216,181,106,.45);
+
+  color:var(--cream);
+
+  font-family:Cinzel,serif;
+
+  font-size:9px;
+
+  letter-spacing:2px;
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+.countdown{
+  display:flex;
+
+  justify-content:center;
+
+  gap:12px;
+
+  flex-wrap:wrap;
+
+  margin-top:20px;
+}
+
+.timebox{
+  min-width:85px;
+
+  padding:12px;
+
+  border:1px solid rgba(216,181,106,.28);
+
+  background:rgba(255,255,255,.025);
+}
+
+.timebox strong{
+  display:block;
+
+  font-family:Cinzel,serif;
+
+  font-size:22px;
+
+  color:var(--gold);
+}
+
+.timebox span{
+  font-size:7px;
+
+  letter-spacing:3px;
+
+  color:#a99d8b;
+}
+
+
+/* =========================
+   OTHER SECTIONS
+========================= */
+
+.section{
+  min-height:100vh;
+
+  padding:110px 24px;
+
+  display:flex;
+
+  align-items:center;
+  justify-content:center;
+
+  background:
+    radial-gradient(
+      circle at 50% 20%,
+      rgba(116,15,28,.18),
+      transparent 40%
+    ),
+    #090707;
+}
+
+.content{
+  max-width:850px;
+
+  text-align:center;
+}
+
+.eyebrow{
+  margin-bottom:18px;
+}
+
+h2{
+  font-family:"Pinyon Script",cursive;
+
+  font-size:clamp(65px,9vw,100px);
+
+  font-weight:400;
+
+  color:var(--cream);
+
+  margin-bottom:25px;
+}
+
+.story-text{
+  font-family:"Cormorant Garamond",serif;
+
+  color:#c7bba5;
+
+  line-height:1.8;
+
+  font-size:21px;
+
+  max-width:650px;
+
+  margin:auto;
+}
+
+.ornament{
+  color:var(--red);
+
+  font-size:32px;
+
+  margin:20px 0;
+}
+
+.details{
+  display:grid;
+
+  grid-template-columns:
+    repeat(3,1fr);
+
+  gap:18px;
+
+  margin-top:40px;
+}
+
+.detail-card{
+  padding:32px 18px;
+
+  border:1px solid rgba(216,181,106,.25);
+
+  background:rgba(255,255,255,.025);
+}
+
+.detail-icon{
+  font-size:27px;
+  margin-bottom:13px;
+}
+
+.detail-card h3{
+  font-family:Cinzel,serif;
+
+  font-size:12px;
+
+  letter-spacing:2px;
+
+  color:var(--gold);
+
+  margin-bottom:10px;
+}
+
+.detail-card p{
+  font-family:"Cormorant Garamond",serif;
+
+  font-size:19px;
+
+  color:#c7bba5;
+}
+
+
+/* =========================
+   FOOTER
+========================= */
+
+footer{
+  text-align:center;
+
+  padding:55px 20px;
+
+  background:#050505;
+
+  border-top:1px solid rgba(216,181,106,.15);
+}
+
+.names-small{
+  font-family:"Pinyon Script",cursive;
+
+  font-size:55px;
+
+  color:#e7d4aa;
+}
+
+footer p{
+  margin-top:8px;
+
+  font-family:Cinzel,serif;
+
+  font-size:9px;
+
+  letter-spacing:4px;
+
+  color:#8f8370;
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media(max-width:700px){
+
+  .boarding-pass{
+    grid-template-columns:1fr;
+  }
+
+  .ticket-main{
+    padding:43px 28px;
+  }
+
+  .ticket-main:after{
+    display:none;
+  }
+
+  .ticket-stub{
+    border-top:2px dashed rgba(216,181,106,.5);
+
+    min-height:150px;
+
+    padding:22px;
+  }
+
+  .barcode{
+    display:none;
+  }
+
+  .names{
+    font-size:70px;
+  }
+
+  .tagline{
+    font-size:18px;
+  }
+
+  .date{
+    font-size:18px;
+  }
+
+  .details{
+    grid-template-columns:1fr;
+  }
+
+  .passport{
+    height:92vh;
+  }
+
+  .passport-page{
+    padding:38px 20px 65px;
+  }
+
+  .cover-names{
+    font-size:62px;
+  }
+
+  .page-head h2{
+    font-size:52px;
+  }
+
+  .page-content p{
+    font-size:17px;
+  }
+
+  .journey-photo{
+    width:205px;
+  }
+
+  .journey-photo img{
+    height:105px;
+  }
+
+  .stamp{
+    width:90px;
+    height:90px;
+  }
+
+  .stamp strong{
+    font-size:15px;
+  }
+
+  .timebox{
+    min-width:70px;
+  }
+}
+
+</style>
 </head>
+
+
 <body>
-<div class="forest"><div class="tree"></div><div class="tree"></div><div class="tree"></div><div class="tree"></div><div class="mist one"></div><div class="mist two"></div><div class="particle p1"></div><div class="particle p2"></div><div class="particle p3"></div><div class="particle p4"></div><div class="particle p5"></div></div>
+
+
+<!-- =========================
+     BACKGROUND
+========================= -->
+
+<div class="forest">
+
+  <div class="tree"></div>
+  <div class="tree"></div>
+  <div class="tree"></div>
+  <div class="tree"></div>
+
+  <div class="mist one"></div>
+  <div class="mist two"></div>
+
+  <div class="particle p1"></div>
+  <div class="particle p2"></div>
+  <div class="particle p3"></div>
+  <div class="particle p4"></div>
+  <div class="particle p5"></div>
+
+</div>
+
+
+<!-- =========================
+     MAIN INVITATION
+========================= -->
 
 <section class="hero">
-<div class="boarding-pass">
-<div class="ticket-main">
-<div class="small-title">✦ YOUR INVITATION ✦</div>
-<div class="names">Aireen <span class="ampersand">&</span> Matej</div>
-<div class="destination">DESTINATION: FOREVER</div>
-<div class="date">20 · MAY · 2027</div>
-<div class="tagline">Two hearts. One journey. One beautiful destination.<br>We invite you to celebrate the beginning of our forever.</div>
-<button class="begin-button" onclick="openPassport()">BEGIN OUR JOURNEY ✦</button>
-</div>
-<div class="ticket-stub"><div><div class="stub-label">BOARDING PASS</div><div class="gold-line"></div><div class="flight">AM 2027</div><div class="route">LOVE → FOREVER</div></div><div class="barcode"></div><div class="stub-label">SEAT: 01 ♥ 02</div></div>
-</div>
+
+  <div class="boarding-pass">
+
+    <div class="ticket-main">
+
+      <div class="small-title">
+        ✦ YOUR INVITATION ✦
+      </div>
+
+      <div class="names">
+        Aireen
+        <span class="ampersand">&</span>
+        Matej
+      </div>
+
+      <div class="destination">
+        DESTINATION: FOREVER
+      </div>
+
+      <div class="date">
+        20 · MAY · 2027
+      </div>
+
+      <div class="tagline">
+        Two hearts. One journey. One beautiful destination.<br>
+        We invite you to celebrate the beginning of our forever.
+      </div>
+
+      <button
+        class="begin-button"
+        onclick="openPassport()">
+
+        BEGIN OUR JOURNEY ✦
+
+      </button>
+
+    </div>
+
+
+    <div class="ticket-stub">
+
+      <div>
+
+        <div class="stub-label">
+          BOARDING PASS
+        </div>
+
+        <div class="gold-line"></div>
+
+        <div class="flight">
+          AM 2027
+        </div>
+
+        <div class="route">
+          LOVE → FOREVER
+        </div>
+
+      </div>
+
+      <div class="barcode"></div>
+
+      <div class="stub-label">
+        SEAT: 01 ♥ 02
+      </div>
+
+    </div>
+
+  </div>
+
 </section>
 
-<div class="passport-overlay" id="passportOverlay">
-<div class="passport">
-<button class="close-passport" onclick="closePassport()">×</button>
-<div class="passport-cover" id="passportCover">
-<div class="passport-symbol">✦</div><h3>THE LOVE PASSPORT</h3><div class="cover-names">Aireen & Matej</div>
-<button class="open-passport" onclick="showPage(1)">OPEN PASSPORT</button>
+
+
+<!-- =========================
+     LOVE PASSPORT
+========================= -->
+
+<div
+  class="passport-overlay"
+  id="passportOverlay">
+
+  <div class="passport">
+
+    <button
+      class="close-passport"
+      onclick="closePassport()">
+
+      ×
+
+    </button>
+
+
+    <!-- PASSPORT COVER -->
+
+    <div
+      class="passport-cover"
+      id="passportCover">
+
+      <div class="passport-symbol">
+        ✦
+      </div>
+
+      <h3>
+        THE LOVE PASSPORT
+      </h3>
+
+      <div class="cover-names">
+        Aireen & Matej
+      </div>
+
+      <button
+        class="open-passport"
+        onclick="showPage(1)">
+
+        OPEN PASSPORT
+
+      </button>
+
+    </div>
+
+
+
+    <!-- =========================
+         PAGE 1 — OUR JOURNEY
+    ========================= -->
+
+    <div
+      class="passport-page"
+      id="page1">
+
+      <div class="page-head">
+
+        <div class="mini">
+          PASSPORT PAGE 01
+        </div>
+
+        <h2>
+          Our Journey
+        </h2>
+
+      </div>
+
+
+      <div class="page-content">
+
+        <div class="stamp">
+
+          <small>
+            DESTINATION
+          </small>
+
+          <strong>
+            FOREVER
+          </strong>
+
+          <small>
+            LOVE • 2027
+          </small>
+
+        </div>
+
+
+        <p>
+          Every love story has a beginning.
+          Ours became a journey filled with memories,
+          adventures, laughter and little moments
+          that brought us closer.
+        </p>
+
+
+        <!-- YOUR PHOTO -->
+
+        <div class="journey-photo">
+
+          <img
+            src="aireen-matej.jpg"
+            alt="Aireen and Matej together">
+
+          <p class="journey-caption">
+            Two hearts • One journey • Forever
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <div class="page-buttons">
+
+        <button
+          class="page-btn"
+          onclick="showPage(2)">
+
+          NEXT PAGE →
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         PAGE 2 — DESTINATION
+    ========================= -->
+
+    <div
+      class="passport-page"
+      id="page2"
+      style="display:none">
+
+      <div class="page-head">
+
+        <div class="mini">
+          PASSPORT PAGE 02
+        </div>
+
+        <h2>
+          The Destination
+        </h2>
+
+      </div>
+
+
+      <div class="page-content">
+
+        <div class="stamp">
+
+          <small>
+            DATE
+          </small>
+
+          <strong>
+            20 MAY
+          </strong>
+
+          <small>
+            2027
+          </small>
+
+        </div>
+
+
+        <p>
+          Our next destination is a lifetime together.
+          We cannot wait to celebrate this beautiful
+          chapter with the people we love.
+        </p>
+
+
+        <div class="countdown">
+
+          <div class="timebox">
+            <strong id="days">--</strong>
+            <span>DAYS</span>
+          </div>
+
+          <div class="timebox">
+            <strong id="hours">--</strong>
+            <span>HOURS</span>
+          </div>
+
+          <div class="timebox">
+            <strong id="minutes">--</strong>
+            <span>MINUTES</span>
+          </div>
+
+          <div class="timebox">
+            <strong id="seconds">--</strong>
+            <span>SECONDS</span>
+          </div>
+
+        </div>
+
+      </div>
+
+
+      <div class="page-buttons">
+
+        <button
+          class="page-btn"
+          onclick="showPage(1)">
+
+          ← BACK
+
+        </button>
+
+        <button
+          class="page-btn"
+          onclick="showPage(3)">
+
+          NEXT PAGE →
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         PAGE 3 — DETAILS
+    ========================= -->
+
+    <div
+      class="passport-page"
+      id="page3"
+      style="display:none">
+
+      <div class="page-head">
+
+        <div class="mini">
+          PASSPORT PAGE 03
+        </div>
+
+        <h2>
+          Wedding Details
+        </h2>
+
+      </div>
+
+
+      <div class="page-content">
+
+        <div class="stamp">
+
+          <small>
+            COUNTRY
+          </small>
+
+          <strong>
+            PH
+          </strong>
+
+          <small>
+            DESTINATION
+          </small>
+
+        </div>
+
+
+        <p>
+
+          <strong style="color:#d8b56a">
+            MAY 20, 2027
+          </strong>
+
+          <br><br>
+
+          Ceremony & Reception
+
+          <br>
+
+          Philippines
+
+          <br><br>
+
+          <span style="font-size:15px;color:#a99d8b">
+
+            Venue and schedule details
+            will be added here.
+
+          </span>
+
+        </p>
+
+      </div>
+
+
+      <div class="page-buttons">
+
+        <button
+          class="page-btn"
+          onclick="showPage(2)">
+
+          ← BACK
+
+        </button>
+
+        <button
+          class="page-btn"
+          onclick="showPage(4)">
+
+          NEXT PAGE →
+
+        </button>
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         PAGE 4 — FINAL CALL
+    ========================= -->
+
+    <div
+      class="passport-page"
+      id="page4"
+      style="display:none">
+
+      <div class="page-head">
+
+        <div class="mini">
+          PASSPORT PAGE 04
+        </div>
+
+        <h2>
+          Final Call
+        </h2>
+
+      </div>
+
+
+      <div class="page-content">
+
+        <div class="stamp">
+
+          <small>
+            BOARDING
+          </small>
+
+          <strong>
+            ♥
+          </strong>
+
+          <small>
+            RESERVED
+          </small>
+
+        </div>
+
+
+        <p>
+
+          Your seat is reserved for the
+          most beautiful journey of our lives.
+
+          <br><br>
+
+          Keep your passport ready.
+          Our greatest adventure is about to begin.
+
+        </p>
+
+      </div>
+
+
+      <div class="page-buttons">
+
+        <button
+          class="page-btn"
+          onclick="showPage(3)">
+
+          ← BACK
+
+        </button>
+
+        <button
+          class="page-btn"
+          onclick="closePassport()">
+
+          RETURN TO INVITATION
+
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
 </div>
 
-<div class="passport-page" id="page1">
-<div class="page-head"><div class="mini">PASSPORT PAGE 01</div><h2>Our Journey</h2></div>
-<div class="page-content"><div class="stamp"><small>DESTINATION</small><strong>FOREVER</strong><small>LOVE • 2027</small></div><p>Every love story has a beginning. Ours became a journey filled with memories, adventures, laughter and little moments that brought us closer.</p></div>
-<div class="journey-photo">
-  <img src="images/aireen-matej.jpg" alt="Aireen and Matej together">
-  <p class="journey-caption">Two hearts • One journey • Forever</p>
-</div><div class="page-buttons"><button class="page-btn" onclick="showPage(2)">NEXT PAGE →</button></div>
-</div>
 
-<div class="passport-page" id="page2" style="display:none">
-<div class="page-head"><div class="mini">PASSPORT PAGE 02</div><h2>The Destination</h2></div>
-<div class="page-content"><div class="stamp"><small>DATE</small><strong>20 MAY</strong><small>2027</small></div><p>Our next destination is a lifetime together. We cannot wait to celebrate this beautiful chapter with the people we love.</p>
-<div class="countdown"><div class="timebox"><strong id="days">--</strong><span>DAYS</span></div><div class="timebox"><strong id="hours">--</strong><span>HOURS</span></div><div class="timebox"><strong id="minutes">--</strong><span>MINUTES</span></div><div class="timebox"><strong id="seconds">--</strong><span>SECONDS</span></div></div></div>
-<div class="page-buttons"><button class="page-btn" onclick="showPage(1)">← BACK</button><button class="page-btn" onclick="showPage(3)">NEXT PAGE →</button></div>
-</div>
 
-<div class="passport-page" id="page3" style="display:none">
-<div class="page-head"><div class="mini">PASSPORT PAGE 03</div><h2>Wedding Details</h2></div>
-<div class="page-content"><div class="stamp"><small>COUNTRY</small><strong>PH</strong><small>OUR DESTINATION</small></div><p><strong style="color:#d8b56a">MAY 20, 2027</strong><br><br>Ceremony & Reception<br>Philippines<br><br><span style="font-size:15px;color:#a99d8b">Venue and schedule details will be added here.</span></p></div>
-<div class="page-buttons"><button class="page-btn" onclick="showPage(2)">← BACK</button><button class="page-btn" onclick="showPage(4)">NEXT PAGE →</button></div>
-</div>
+<!-- =========================
+     LOVE STORY SECTION
+========================= -->
 
-<div class="passport-page" id="page4" style="display:none">
-<div class="page-head"><div class="mini">PASSPORT PAGE 04</div><h2>Final Call</h2></div>
-<div class="page-content"><div class="stamp"><small>BOARDING</small><strong>♥</strong><small>RESERVED</small></div><p>Your seat is reserved for the most beautiful journey of our lives.<br><br>Keep your passport ready. Our greatest adventure is about to begin.</p></div>
-<div class="page-buttons"><button class="page-btn" onclick="showPage(3)">← BACK</button><button class="page-btn" onclick="closePassport()">RETURN TO INVITATION</button></div>
-</div>
-</div>
-</div>
+<section class="section">
 
-<section class="section"><div class="content"><div class="eyebrow">OUR JOURNEY</div><h2>Our Love Story</h2><div class="ornament">❦</div><p class="story-text">Every love story has a beginning. Ours became a journey filled with memories, adventures, laughter, challenges and countless little moments that brought us closer together.<br><br>And now, we're ready for our next destination — forever.</p></div></section>
+  <div class="content">
 
-<section class="section"><div class="content"><div class="eyebrow">THE DESTINATION</div><h2>Our Wedding</h2><div class="details"><div class="detail-card"><div class="detail-icon">📅</div><h3>DATE</h3><p>May 20, 2027</p></div><div class="detail-card"><div class="detail-icon">💍</div><h3>CELEBRATION</h3><p>Ceremony & Reception</p></div><div class="detail-card"><div class="detail-icon">📍</div><h3>LOCATION</h3><p>Philippines</p></div></div></div></section>
+    <div class="eyebrow">
+      OUR JOURNEY
+    </div>
 
-<section class="section"><div class="content"><div class="eyebrow">FINAL CALL</div><h2>Your Seat Is Reserved</h2><div class="ornament">♥</div><p class="story-text">We can't wait to celebrate this beautiful chapter with the people we love.<br><br>Until then, keep your passport ready. Our greatest adventure is about to begin.</p></div></section>
-<footer><div class="names-small">Aireen & Matej</div><p>MAY 20 · 2027</p></footer>
+    <h2>
+      Our Love Story
+    </h2>
+
+    <div class="ornament">
+      ❦
+    </div>
+
+    <p class="story-text">
+
+      Every love story has a beginning.
+      Ours became a journey filled with memories,
+      adventures, laughter, challenges and countless
+      little moments that brought us closer together.
+
+      <br><br>
+
+      And now, we're ready for our next destination —
+      forever.
+
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     WEDDING DETAILS
+========================= -->
+
+<section class="section">
+
+  <div class="content">
+
+    <div class="eyebrow">
+      THE DESTINATION
+    </div>
+
+    <h2>
+      Our Wedding
+    </h2>
+
+
+    <div class="details">
+
+      <div class="detail-card">
+
+        <div class="detail-icon">
+          📅
+        </div>
+
+        <h3>
+          DATE
+        </h3>
+
+        <p>
+          May 20, 2027
+        </p>
+
+      </div>
+
+
+      <div class="detail-card">
+
+        <div class="detail-icon">
+          💍
+        </div>
+
+        <h3>
+          CELEBRATION
+        </h3>
+
+        <p>
+          Ceremony & Reception
+        </p>
+
+      </div>
+
+
+      <div class="detail-card">
+
+        <div class="detail-icon">
+          📍
+        </div>
+
+        <h3>
+          LOCATION
+        </h3>
+
+        <p>
+          Philippines
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     FINAL CALL
+========================= -->
+
+<section class="section">
+
+  <div class="content">
+
+    <div class="eyebrow">
+      FINAL CALL
+    </div>
+
+    <h2>
+      Your Seat Is Reserved
+    </h2>
+
+    <div class="ornament">
+      ♥
+    </div>
+
+    <p class="story-text">
+
+      We can't wait to celebrate this
+      beautiful chapter with the people we love.
+
+      <br><br>
+
+      Until then, keep your passport ready.
+      Our greatest adventure is about to begin.
+
+    </p>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+  <div class="names-small">
+    Aireen & Matej
+  </div>
+
+  <p>
+    MAY 20 · 2027
+  </p>
+
+</footer>
+
+
 
 <script>
-function openPassport(){document.getElementById('passportOverlay').classList.add('open');document.body.style.overflow='hidden';showPage(1)}
-function closePassport(){document.getElementById('passportOverlay').classList.remove('open');document.body.style.overflow='';document.getElementById('passportCover').classList.remove('hidden')}
-function showPage(n){document.getElementById('passportCover').classList.toggle('hidden',n!==0);document.querySelectorAll('.passport-page').forEach(p=>p.style.display='none');if(n>0)document.getElementById('page'+n).style.display='block'}
-const weddingDate=new Date('2027-05-20T00:00:00');
-function updateCountdown(){const diff=weddingDate-new Date();document.getElementById('days').textContent=Math.max(0,Math.floor(diff/86400000));document.getElementById('hours').textContent=Math.max(0,Math.floor(diff/3600000)%24);document.getElementById('minutes').textContent=Math.max(0,Math.floor(diff/60000)%60);document.getElementById('seconds').textContent=Math.max(0,Math.floor(diff/1000)%60)}
-updateCountdown();setInterval(updateCountdown,1000);
-document.getElementById('passportOverlay').addEventListener('click',e=>{if(e.target===e.currentTarget)closePassport()});
+
+/* =========================
+   PASSPORT CONTROLS
+========================= */
+
+function openPassport(){
+
+  document
+    .getElementById("passportOverlay")
+    .classList
+    .add("open");
+
+  document.body.style.overflow="hidden";
+
+  showPage(1);
+}
+
+
+function closePassport(){
+
+  document
+    .getElementById("passportOverlay")
+    .classList
+    .remove("open");
+
+  document.body.style.overflow="";
+
+  document
+    .getElementById("passportCover")
+    .classList
+    .remove("hidden");
+}
+
+
+function showPage(n){
+
+  document
+    .getElementById("passportCover")
+    .classList
+    .toggle("hidden",n!==0);
+
+
+  document
+    .querySelectorAll(".passport-page")
+    .forEach(page => {
+
+      page.style.display="none";
+
+    });
+
+
+  if(n>0){
+
+    document
+      .getElementById("page"+n)
+      .style.display="block";
+
+  }
+
+}
+
+
+/* =========================
+   COUNTDOWN
+========================= */
+
+const weddingDate =
+  new Date("2027-05-20T00:00:00");
+
+
+function updateCountdown(){
+
+  const diff =
+    weddingDate - new Date();
+
+
+  document.getElementById("days")
+    .textContent =
+    Math.max(
+      0,
+      Math.floor(diff / 86400000)
+    );
+
+
+  document.getElementById("hours")
+    .textContent =
+    Math.max(
+      0,
+      Math.floor(diff / 3600000) % 24
+    );
+
+
+  document.getElementById("minutes")
+    .textContent =
+    Math.max(
+      0,
+      Math.floor(diff / 60000) % 60
+    );
+
+
+  document.getElementById("seconds")
+    .textContent =
+    Math.max(
+      0,
+      Math.floor(diff / 1000) % 60
+    );
+
+}
+
+
+updateCountdown();
+
+setInterval(
+  updateCountdown,
+  1000
+);
+
+
+/* CLOSE WHEN CLICKING OUTSIDE */
+
+document
+  .getElementById("passportOverlay")
+  .addEventListener(
+    "click",
+    event => {
+
+      if(
+        event.target === event.currentTarget
+      ){
+
+        closePassport();
+
+      }
+
+    }
+  );
+
 </script>
+
 </body>
 </html>
