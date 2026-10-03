@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Aireen & Matej | Our Love Story</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600&family=Great+Vibes&family=Montserrat:wght@300;400;500&display=swap');
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: #080707;
+      color: #f5ead1;
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* -------------------------
+       HERO / BOARDING PASS
+    ------------------------- */
+
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 30px 20px;
+      overflow: hidden;
+
+      background:
+        radial-gradient(circle at 50% 40%, rgba(125, 18, 28, 0.45), transparent 35%),
+        linear-gradient(rgba(5, 5, 5, .35), rgba(5, 5, 5, .9)),
+        #090707;
+    }
+
+    /* Dreamy forest silhouettes */
+
+    .forest {
+      position: absolute;
+      inset: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .tree {
+      position: absolute;
+      bottom: -20px;
+      width: 0;
+      height: 0;
+      border-left: 80px solid transparent;
+      border-right: 80px solid transparent;
+      border-bottom: 230px solid rgba(20, 15, 14, .9);
+      filter: blur(.3px);
+    }
+
+    .tree::after {
+      content: "";
+      position: absolute;
+      left: -60px;
+      top: 80px;
+      width: 0;
+      height: 0;
+      border-left: 60px solid transparent;
+      border-right: 60px solid transparent;
+      border-bottom: 180px solid rgba(12, 10, 10, .95);
+    }
+
+    .tree:nth-child(1) {
+      left: -20px;
+      transform: scale(1.3);
+    }
+
+    .tree:nth-child(2) {
+      left: 20%;
+      transform: scale(.8);
+    }
+
+    .tree:nth-child(3) {
+      right: 18%;
+      transform: scale(1.1);
+    }
+
+    .tree:nth-child(4) {
+      right: -30px;
+      transform: scale(1.4);
+    }
+
+    /* Floating gold particles */
+
+    .particle {
+      position: absolute;
+      width: 3px;
+      height: 3px;
+      background: #d9b76c;
+      border-radius: 50%;
+      opacity: .7;
+      animation: float 6s infinite ease-in-out;
+    }
+
+    .p1 { left: 15%; top: 20%; animation-delay: 0s; }
+    .p2 { left: 78%; top: 25%; animation-delay: 1s; }
+    .p3 { left: 30%; top: 65%; animation-delay: 2s; }
+    .p4 { left: 68%; top: 70%; animation-delay: 3s; }
+    .p5 { left: 52%; top: 15%; animation-delay: 4s; }
+
+    @keyframes float {
+      0%, 100% {
+        transform: translateY(0);
+        opacity: .25;
+      }
+      50% {
+        transform: translateY(-25px);
+        opacity: .9;
+      }
+    }
+
+    /* Boarding pass */
+
+    .boarding-pass {
+      position: relative;
+      z-index: 5;
+      width: min(900px, 94vw);
+      min-height: 470px;
+
+      border: 1px solid rgba(211, 176, 95, .65);
+      border-radius: 8px;
+
+      background:
+        linear-gradient(135deg,
+          rgba(20, 18, 17, .96),
+          rgba(42, 10, 14, .94));
+
+      box-shadow:
+        0 30px 100px rgba(0, 0, 0, .75),
+        0 0 50px rgba(120, 15, 30, .18);
+
+      display: grid;
+      grid-template-columns: 1fr 190px;
+      overflow: hidden;
+
+      animation: appear 1.5s ease;
+    }
+
+    @keyframes appear {
+      from {
+        opacity: 0;
+        transform: translateY(35px) scale(.97);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .ticket-main {
+      padding: 55px 60px;
+      position: relative;
+    }
+
+    .ticket-main::after {
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: 0;
+      height: 100%;
+      border-right: 2px dashed rgba(217, 183, 108, .55);
+    }
+
+    .small-title {
+      font-family: 'Cinzel', serif;
+      font-size: 12px;
+      letter-spacing: 5px;
+      color: #d9b76c;
+      margin-bottom: 30px;
+    }
+
+    .names {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(65px, 10vw, 105px);
+      font-weight: 400;
+      line-height: .95;
+      color: #f3e4c1;
+    }
+
+    .ampersand {
+      color: #a9162b;
+      font-size: .65em;
+      margin: 0 8px;
+    }
+
+    .destination {
+      margin-top: 35px;
+      font-family: 'Cinzel', serif;
+      letter-spacing: 4px;
+      font-size: 13px;
+      color: #d9b76c;
+    }
+
+    .date {
+      margin-top: 15px;
+      font-family: 'Cinzel', serif;
+      font-size: 24px;
+      letter-spacing: 5px;
+      color: #fff3d5;
+    }
+
+    .tagline {
+      margin-top: 30px;
+      color: #c7bba5;
+      font-size: 13px;
+      letter-spacing: 1px;
+      line-height: 1.8;
+      max-width: 480px;
+    }
+
+    /* Boarding stub */
+
+    .ticket-stub {
+      padding: 35px 25px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+      text-align: center;
+      background: rgba(0, 0, 0, .16);
+    }
+
+    .stub-label {
+      font-family: 'Cinzel', serif;
+      font-size: 10px;
+      letter-spacing: 3px;
+      color: #d9b76c;
+    }
+
+    .flight {
+      font-family: 'Cinzel', serif;
+      font-size: 28px;
+      letter-spacing: 4px;
+    }
+
+    .route {
+      color: #bdb09b;
+      font-size: 10px;
+      letter-spacing: 2px;
+      margin-top: 5px;
+    }
+
+    .barcode {
+      width: 90px;
+      height: 80px;
+      background: repeating-linear-gradient(
+        90deg,
+        #e5d3aa 0px,
+        #e5d3aa 2px,
+        transparent 2px,
+        transparent 5px
+      );
+      opacity: .75;
+    }
+
+    .gold-line {
+      width: 45px;
+      height: 1px;
+      background: #d9b76c;
+      margin: 12px auto;
+    }
+
+    .begin-button {
+      display: inline-block;
+      margin-top: 35px;
+      padding: 15px 28px;
+
+      color: #f8e8c0;
+      border: 1px solid #b99752;
+      background: rgba(100, 10, 20, .5);
+
+      text-decoration: none;
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 3px;
+
+      transition: .35s ease;
+    }
+
+    .begin-button:hover {
+      background: #8e1729;
+      border-color: #e2c47a;
+      transform: translateY(-3px);
+      box-shadow: 0 10px 30px rgba(100, 10, 20, .35);
+    }
+
+    /* -------------------------
+       STORY SECTION
+    ------------------------- */
+
+    .section {
+      min-height: 100vh;
+      padding: 100px 25px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background:
+        radial-gradient(circle at 50% 20%, rgba(116, 15, 28, .18), transparent 40%),
+        #090707;
+    }
+
+    .content {
+      max-width: 850px;
+      text-align: center;
+    }
+
+    .eyebrow {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      letter-spacing: 5px;
+      color: #d9b76c;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      font-family: 'Great Vibes', cursive;
+      font-size: clamp(55px, 9vw, 90px);
+      font-weight: 400;
+      color: #f1dfb8;
+      margin-bottom: 30px;
+    }
+
+    .story-text {
+      color: #c7bba5;
+      line-height: 2;
+      font-size: 15px;
+      max-width: 650px;
+      margin: auto;
+    }
+
+    .ornament {
+      color: #a9162b;
+      font-size: 30px;
+      margin: 25px 0;
+    }
+
+    /* -------------------------
+       WEDDING DETAILS
+    ------------------------- */
+
+    .details {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      margin-top: 50px;
+    }
+
+    .detail-card {
+      padding: 35px 20px;
+      border: 1px solid rgba(217, 183, 108, .25);
+      background: rgba(255, 255, 255, .025);
+    }
+
+    .detail-icon {
+      font-size: 28px;
+      margin-bottom: 15px;
+    }
+
+    .detail-card h3 {
+      font-family: 'Cinzel', serif;
+      font-size: 13px;
+      letter-spacing: 2px;
+      color: #d9b76c;
+      margin-bottom: 12px;
+    }
+
+    .detail-card p {
+      color: #c7bba5;
+      font-size: 13px;
+      line-height: 1.7;
+    }
+
+    /* Footer */
+
+    footer {
+      padding: 60px 20px;
+      text-align: center;
+      background: #050505;
+      border-top: 1px solid rgba(217, 183, 108, .15);
+    }
+
+    footer .names-small {
+      font-family: 'Great Vibes', cursive;
+      font-size: 45px;
+      color: #e7d4aa;
+    }
+
+    footer p {
+      margin-top: 10px;
+      font-family: 'Cinzel', serif;
+      font-size: 9px;
+      letter-spacing: 4px;
+      color: #8f8370;
+    }
+
+    /* Mobile */
+
+    @media (max-width: 700px) {
+
+      .boarding-pass {
+        grid-template-columns: 1fr;
+      }
+
+      .ticket-main {
+        padding: 45px 30px;
+      }
+
+      .ticket-main::after {
+        display: none;
+      }
+
+      .ticket-stub {
+        border-top: 2px dashed rgba(217, 183, 108, .5);
+        min-height: 190px;
+        padding: 25px;
+      }
+
+      .barcode {
+        display: none;
+      }
+
+      .details {
+        grid-template-columns: 1fr;
+      }
+
+      .names {
+        font-size: 68px;
+      }
+
+      .date {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- DREAMY FOREST -->
+  <div class="forest">
+    <div class="tree"></div>
+    <div class="tree"></div>
+    <div class="tree"></div>
+    <div class="tree"></div>
+
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+    <div class="particle p5"></div>
+  </div>
+
+
+  <!-- HERO -->
+  <section class="hero">
+
+    <div class="boarding-pass">
+
+      <div class="ticket-main">
+
+        <div class="small-title">
+          ✦ YOUR INVITATION ✦
+        </div>
+
+        <div class="names">
+          Aireen <span class="ampersand">&</span> Matej
+        </div>
+
+        <div class="destination">
+          DESTINATION: FOREVER
+        </div>
+
+        <div class="date">
+          20 · MAY · 2027
+        </div>
+
+        <div class="tagline">
+          Two hearts. One journey. One beautiful destination.
+          <br>
+          We invite you to celebrate the beginning of our forever.
+        </div>
+
+        <a href="#journey" class="begin-button">
+          BEGIN OUR JOURNEY ✦
+        </a>
+
+      </div>
+
+
+      <div class="ticket-stub">
+
+        <div>
+          <div class="stub-label">
+            BOARDING PASS
+          </div>
+
+          <div class="gold-line"></div>
+
+          <div class="flight">
+            AM 2027
+          </div>
+
+          <div class="route">
+            LOVE → FOREVER
+          </div>
+        </div>
+
+        <div class="barcode"></div>
+
+        <div class="stub-label">
+          SEAT: 01 ♥ 02
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- OUR JOURNEY -->
+  <section class="section" id="journey">
+
+    <div class="content">
+
+      <div class="eyebrow">
+        OUR JOURNEY
+      </div>
+
+      <h2>Our Love Story</h2>
+
+      <div class="ornament">
+        ❦
+      </div>
+
+      <p class="story-text">
+        Every love story has a beginning.
+        Ours became a journey filled with memories,
+        adventures, laughter, challenges and countless
+        little moments that brought us closer together.
+        <br><br>
+        And now, we're ready for our next destination —
+        forever.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <!-- WEDDING DETAILS -->
+  <section class="section">
+
+    <div class="content">
+
+      <div class="eyebrow">
+        THE DESTINATION
+      </div>
+
+      <h2>Our Wedding</h2>
+
+      <div class="details">
+
+        <div class="detail-card">
+          <div class="detail-icon">📅</div>
+          <h3>DATE</h3>
+          <p>
+            May 20, 2027
+          </p>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-icon">💍</div>
+          <h3>CELEBRATION</h3>
+          <p>
+            Ceremony & Reception
+          </p>
+        </div>
+
+        <div class="detail-card">
+          <div class="detail-icon">📍</div>
+          <h3>LOCATION</h3>
+          <p>
+            Philippines
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FINAL MESSAGE -->
+  <section class="section">
+
+    <div class="content">
+
+      <div class="eyebrow">
+        FINAL CALL
+      </div>
+
+      <h2>Your Seat Is Reserved</h2>
+
+      <div class="ornament">
+        ♥
+      </div>
+
+      <p class="story-text">
+        We can't wait to celebrate this beautiful chapter
+        with the people we love.
+        <br><br>
+        Until then, keep your passport ready.
+        Our greatest adventure is about to begin.
+      </p>
+
+    </div>
+
+  </section>
+
+
+  <footer>
+
+    <div class="names-small">
+      Aireen & Matej
+    </div>
+
+    <p>
+      MAY 20 · 2027
+    </p>
+
+  </footer>
+
+</body>
+</html>
